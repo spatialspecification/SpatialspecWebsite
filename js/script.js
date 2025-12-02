@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Form Submission via FormSubmit
+    // Form Submission via Google Apps Script
     document.querySelectorAll('.contact-form-inline').forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -68,26 +68,15 @@ document.addEventListener('DOMContentLoaded', function() {
             fetch(this.action, {
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                mode: 'no-cors'
             })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    this.reset();
-                    submitBtn.textContent = 'Sent!';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                } else {
-                    submitBtn.textContent = 'Error';
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 2000);
-                }
+            .then(() => {
+                this.reset();
+                submitBtn.textContent = 'Sent!';
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
             })
             .catch(error => {
                 submitBtn.textContent = 'Error';

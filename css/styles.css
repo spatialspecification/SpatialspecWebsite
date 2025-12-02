@@ -250,11 +250,11 @@ body {
 }
 
 .form-actions {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 1rem;
     margin-top: 0.5rem;
+}
+
+.submit-btn {
+    float: right;
 }
 
 /* =============================================

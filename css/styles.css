@@ -1,0 +1,310 @@
+/* =============================================
+   Spatialspec - Main Stylesheet
+   ============================================= */
+
+:root {
+    --bg-primary: #0a0a0b;
+    --bg-elevated: #18181b;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --accent: #00ff88;
+    --border-color: #27272a;
+    --transition: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =============================================
+   Hero Section
+   ============================================= */
+.hero {
+    min-height: auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 2rem 5% 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 80%;
+    height: 150%;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.06) 0%, transparent 60%);
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(5deg); }
+    66% { transform: translate(-20px, 20px) rotate(-5deg); }
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    animation: fadeUp 1s var(--transition) forwards;
+    opacity: 0;
+    text-align: left;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    line-height: 1;
+    margin-bottom: 1rem;
+    animation: fadeUp 1s var(--transition) 0.2s forwards;
+    opacity: 0;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+}
+
+.title-grey {
+    color: #888888;
+}
+
+.highlight-text {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: var(--accent);
+    max-width: 500px;
+    margin-bottom: 0;
+    animation: fadeUp 1s var(--transition) 0.4s forwards;
+    opacity: 0;
+    font-weight: 400;
+    line-height: 1.7;
+}
+
+.hero-divider {
+    width: 120px;
+    height: 2px;
+    background: var(--accent);
+    border: none;
+    margin: 0.5rem 0 1.5rem 0;
+    animation: fadeUp 1s var(--transition) 0.45s forwards;
+    opacity: 0;
+    border-radius: 2px;
+}
+
+/* =============================================
+   Service Buttons
+   ============================================= */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    animation: fadeUp 1s var(--transition) 0.5s forwards;
+    opacity: 0;
+    align-items: flex-start;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn-blue,
+.contact-btn,
+.attach-btn,
+.submit-btn {
+    background: transparent;
+    color: var(--text-primary);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 400;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.2s var(--transition);
+    display: inline-flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-blue:hover,
+.btn-blue.active,
+.contact-btn:hover,
+.attach-btn:hover,
+.submit-btn:hover {
+    background: var(--bg-elevated);
+    color: var(--accent);
+}
+
+/* =============================================
+   Service Dropdown
+   ============================================= */
+.service-dropdown {
+    display: none;
+    background: transparent;
+    padding: 1rem 0;
+    animation: slideDown 0.3s var(--transition);
+}
+
+.service-dropdown.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.service-description {
+    color: #aaaaaa !important;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 0 0 1rem 0;
+    max-width: 500px;
+}
+
+.service-description strong {
+    color: #ffffff;
+}
+
+.contact-btn {
+    float: right;
+}
+
+/* =============================================
+   Contact Form
+   ============================================= */
+.contact-form-inline {
+    display: none;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    clear: both;
+}
+
+.contact-form-inline.active {
+    display: flex;
+}
+
+.contact-form-inline input,
+.contact-form-inline textarea,
+.contact-form-inline select {
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-primary);
+    transition: all 0.2s var(--transition);
+}
+
+.contact-form-inline select {
+    cursor: pointer;
+    width: 100%;
+}
+
+.contact-form-inline input::placeholder,
+.contact-form-inline textarea::placeholder {
+    color: #666666;
+}
+
+.contact-form-inline input:focus,
+.contact-form-inline textarea:focus,
+.contact-form-inline select:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.contact-form-inline textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* =============================================
+   Legal Buttons
+   ============================================= */
+.legal-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.5rem;
+    align-items: flex-start;
+}
+
+.legal-buttons .btn-blue {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.legal-buttons .btn-blue:hover,
+.legal-buttons .btn-blue.active {
+    color: var(--accent);
+    background: transparent;
+}
+
+.legal-buttons .service-dropdown .service-description {
+    font-size: 0.75rem;
+}
+
+/* =============================================
+   Copyright
+   ============================================= */
+.copyright {
+    margin-top: 1rem;
+}
+
+.copyright p {
+    color: var(--accent);
+    font-size: 0.65rem;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* =============================================
+   Mobile Responsive
+   ============================================= */
+@media (max-width: 480px) {
+    .hero-buttons {
+        width: 100%;
+    }
+
+    .btn-blue {
+        width: 100%;
+        justify-content: center;
+    }
+}

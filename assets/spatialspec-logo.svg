@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" width="400" height="80">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700');
+    .logo-text { font-family: 'JetBrains Mono', 'Courier New', monospace; font-weight: 700; font-size: 48px; }
+    .white { fill: #ffffff; }
+    .grey { fill: #888888; }
+  </style>
+  <rect width="400" height="80" fill="#0a0a0b"/>
+  <text x="20" y="55" class="logo-text">
+    <tspan class="white">Spatial</tspan><tspan class="grey">spec</tspan>
+  </text>
+</svg>
+

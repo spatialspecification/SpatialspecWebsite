@@ -196,8 +196,6 @@ body {
 
 .contact-btn {
     float: right;
-    /* HIDDEN FOR NOW - Remove display:none to activate */
-    display: none !important;
 }
 
 /* =============================================
@@ -212,8 +210,7 @@ body {
 }
 
 .contact-form-inline.active {
-    /* HIDDEN FOR NOW - Change to display:flex to activate */
-    display: none;
+    display: flex;
 }
 
 .contact-form-inline input,

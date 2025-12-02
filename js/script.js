@@ -73,17 +73,12 @@ document.addEventListener('DOMContentLoaded', function() {
             
             const subject = `${inquiryNumber}: ${service}:`;
             const body = `Inquiry: ${inquiryNumber}%0D%0AService: ${service}%0D%0AName: ${name}%0D%0ACompany: ${company}%0D%0AEmail: ${email}%0D%0A%0D%0ADescription:%0D%0A${encodeURIComponent(description)}`;
-            window.location.href = `mailto:info@spatialspec.net?subject=${encodeURIComponent(subject)}&body=${body}`;
-        });
-    });
-
-    // File Attachment Display
-    document.querySelectorAll('.attach-btn input[type="file"]').forEach(input => {
-        input.addEventListener('change', function() {
-            const label = this.parentElement;
-            if (this.files.length > 0) {
-                label.textContent = this.files[0].name;
-                label.appendChild(this);
+            window.location.href = `mailto:rhett@spatialspec.net?subject=${encodeURIComponent(subject)}&body=${body}`;
+            
+            // Show "Sent." message
+            const sentMessage = this.querySelector('.sent-message');
+            if (sentMessage) {
+                sentMessage.classList.add('visible');
             }
         });
     });

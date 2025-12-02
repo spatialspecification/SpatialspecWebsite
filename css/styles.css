@@ -250,10 +250,21 @@ body {
 
 .form-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     gap: 1rem;
     margin-top: 0.5rem;
+}
+
+.sent-message {
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: none;
+}
+
+.sent-message.visible {
+    display: inline;
 }
 
 /* =============================================

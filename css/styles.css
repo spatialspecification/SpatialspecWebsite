@@ -256,17 +256,6 @@ body {
     margin-top: 0.5rem;
 }
 
-.sent-message {
-    color: var(--accent);
-    font-size: 0.9rem;
-    font-weight: 400;
-    display: none;
-}
-
-.sent-message.visible {
-    display: inline;
-}
-
 /* =============================================
    Legal Buttons
    ============================================= */

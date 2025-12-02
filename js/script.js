@@ -53,30 +53,49 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Generate inquiry number
-    function generateInquiryNumber() {
-        return Math.floor(1000 + Math.random() * 9000);
-    }
-
-    // Form Submission
+    // Form Submission via FormSubmit
     document.querySelectorAll('.contact-form-inline').forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const service = this.getAttribute('data-subject');
-            const inquiryNumber = generateInquiryNumber();
             const formData = new FormData(this);
-            const name = formData.get('name');
-            const company = formData.get('company');
-            const email = formData.get('email');
-            const description = formData.get('description');
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
             
-            const subject = `${inquiryNumber}: ${service}:`;
-            const body = `Inquiry: ${inquiryNumber}%0D%0AService: ${service}%0D%0AName: ${name}%0D%0ACompany: ${company}%0D%0AEmail: ${email}%0D%0A%0D%0ADescription:%0D%0A${encodeURIComponent(description)}`;
-            window.location.href = `mailto:rhett@spatialspec.net?subject=${encodeURIComponent(subject)}&body=${body}`;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
             
-            // Clear the form
-            this.reset();
+            fetch(this.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    this.reset();
+                    submitBtn.textContent = 'Sent!';
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 2000);
+                } else {
+                    submitBtn.textContent = 'Error';
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    }, 2000);
+                }
+            })
+            .catch(error => {
+                submitBtn.textContent = 'Error';
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }, 2000);
+            });
         });
     });
 

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subcontract Agreement - Spatialspec</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.5;
+            color: #333;
+            background: #fff;
+            padding: 40px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        @media print {
+            body {
+                padding: 20px 40px;
+            }
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #00ff88;
+        }
+        
+        .logo {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            font-size: 32px;
+            font-weight: 700;
+        }
+        
+        .logo-spatial { color: #0a0a0b; }
+        .logo-spec { color: #888; }
+        
+        .company-details {
+            text-align: right;
+            font-size: 10px;
+            color: #666;
+        }
+        
+        .document-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .document-title h1 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #0a0a0b;
+            margin-bottom: 5px;
+        }
+        
+        .document-title .subtitle {
+            color: #00aa66;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #0a0a0b;
+            margin-bottom: 8px;
+            padding-bottom: 4px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .section-number {
+            color: #00aa66;
+            margin-right: 8px;
+        }
+        
+        .field-row {
+            display: flex;
+            margin-bottom: 8px;
+            align-items: flex-end;
+        }
+        
+        .field-label {
+            font-weight: 500;
+            min-width: 140px;
+            color: #555;
+        }
+        
+        .field-value {
+            flex: 1;
+            border-bottom: 1px solid #ccc;
+            min-height: 18px;
+            padding-left: 5px;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .terms-list {
+            padding-left: 20px;
+        }
+        
+        .terms-list li {
+            margin-bottom: 6px;
+        }
+        
+        .signature-section {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+        
+        .signature-box h3 {
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #0a0a0b;
+        }
+        
+        .signature-line {
+            border-bottom: 1px solid #333;
+            height: 40px;
+            margin-bottom: 5px;
+        }
+        
+        .signature-label {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            padding-top: 15px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+            font-size: 9px;
+            color: #888;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 6px;
+        }
+        
+        .checkbox {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #333;
+            margin-right: 8px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .text-area {
+            border: 1px solid #ccc;
+            min-height: 60px;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        
+        .highlight {
+            background: #f0fff5;
+            padding: 10px;
+            border-left: 3px solid #00ff88;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <div class="logo">
+                <span class="logo-spatial">Spatial</span><span class="logo-spec">spec</span>
+            </div>
+            <div style="color: #00aa66; font-size: 9px; margin-top: 2px;">Survey | Engineer | Draft</div>
+        </div>
+        <div class="company-details">
+            <div>ABN: 75 761 156 217</div>
+            <div>Cowaramup & Perth, WA</div>
+            <div>info@spatialspec.net</div>
+        </div>
+    </div>
+    
+    <div class="document-title">
+        <h1>SUBCONTRACT AGREEMENT</h1>
+        <div class="subtitle">SURVEY & SPATIAL SERVICES</div>
+    </div>
+    
+    <!-- Agreement Details -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">1.</span>AGREEMENT DETAILS</div>
+        <div class="field-row">
+            <span class="field-label">Agreement Date:</span>
+            <span class="field-value"></span>
+        </div>
+        <div class="field-row">
+            <span class="field-label">Agreement Number:</span>
+            <span class="field-value"></span>
+        </div>
+    </div>
+    
+    <!-- Parties -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">2.</span>PARTIES</div>
+        <div class="two-column">
+            <div>
+                <strong style="font-size: 10px; color: #00aa66;">PRINCIPAL (Spatialspec)</strong>
+                <div class="field-row">
+                    <span class="field-label">Contact:</span>
+                    <span class="field-value"></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-label">Phone:</span>
+                    <span class="field-value"></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-label">Email:</span>
+                    <span class="field-value"></span>
+                </div>
+            </div>
+            <div>
+                <strong style="font-size: 10px; color: #00aa66;">SUBCONTRACTOR</strong>
+                <div class="field-row">
+                    <span class="field-label">Business Name:</span>
+                    <span class="field-value"></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-label">ABN:</span>
+                    <span class="field-value"></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-label">Contact:</span>
+                    <span class="field-value"></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-label">Phone:</span>
+                    <span class="field-value"></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-label">Email:</span>
+                    <span class="field-value"></span>
+                </div>
+                <div class="field-row">
+                    <span class="field-label">Address:</span>
+                    <span class="field-value"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Project Details -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">3.</span>PROJECT DETAILS</div>
+        <div class="field-row">
+            <span class="field-label">Project Name:</span>
+            <span class="field-value"></span>
+        </div>
+        <div class="field-row">
+            <span class="field-label">Project Location:</span>
+            <span class="field-value"></span>
+        </div>
+        <div class="field-row">
+            <span class="field-label">Client Reference:</span>
+            <span class="field-value"></span>
+        </div>
+    </div>
+    
+    <!-- Scope of Work -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">4.</span>SCOPE OF WORK</div>
+        <div class="text-area"></div>
+    </div>
+    
+    <!-- Services Required -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">5.</span>SERVICES REQUIRED</div>
+        <div class="two-column">
+            <div>
+                <div class="checkbox-item"><div class="checkbox"></div>Feature Survey</div>
+                <div class="checkbox-item"><div class="checkbox"></div>Contour Survey</div>
+                <div class="checkbox-item"><div class="checkbox"></div>Volume Calculation</div>
+                <div class="checkbox-item"><div class="checkbox"></div>Elevation Survey</div>
+                <div class="checkbox-item"><div class="checkbox"></div>Setout</div>
+            </div>
+            <div>
+                <div class="checkbox-item"><div class="checkbox"></div>As-Constructed Survey</div>
+                <div class="checkbox-item"><div class="checkbox"></div>Monitoring Survey</div>
+                <div class="checkbox-item"><div class="checkbox"></div>Drone Survey</div>
+                <div class="checkbox-item"><div class="checkbox"></div>Utilities Location</div>
+                <div class="checkbox-item"><div class="checkbox"></div>CAD Drafting</div>
+            </div>
+        </div>
+        <div class="field-row" style="margin-top: 10px;">
+            <span class="field-label">Other:</span>
+            <span class="field-value"></span>
+        </div>
+    </div>
+    
+    <!-- Timeline -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">6.</span>TIMELINE</div>
+        <div class="two-column">
+            <div class="field-row">
+                <span class="field-label">Commencement Date:</span>
+                <span class="field-value"></span>
+            </div>
+            <div class="field-row">
+                <span class="field-label">Completion Date:</span>
+                <span class="field-value"></span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Payment -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">7.</span>PAYMENT</div>
+        <div class="field-row">
+            <span class="field-label">Contract Value (ex GST):</span>
+            <span class="field-value">$</span>
+        </div>
+        <div class="field-row">
+            <span class="field-label">GST:</span>
+            <span class="field-value">$</span>
+        </div>
+        <div class="field-row">
+            <span class="field-label">Total (inc GST):</span>
+            <span class="field-value">$</span>
+        </div>
+        <div class="field-row">
+            <span class="field-label">Payment Terms:</span>
+            <span class="field-value"></span>
+        </div>
+    </div>
+    
+    <!-- Terms & Conditions -->
+    <div class="section">
+        <div class="section-title"><span class="section-number">8.</span>TERMS & CONDITIONS</div>
+        <ol class="terms-list">
+            <li>The Subcontractor agrees to perform the services described in accordance with professional standards.</li>
+            <li>The Subcontractor shall maintain appropriate professional indemnity and public liability insurance.</li>
+            <li>All work product and deliverables remain the property of Spatialspec upon payment.</li>
+            <li>The Subcontractor shall maintain confidentiality regarding all project information.</li>
+            <li>Either party may terminate this agreement with 7 days written notice.</li>
+            <li>The Subcontractor is responsible for their own tax obligations and is not an employee of Spatialspec.</li>
+            <li>Variations to scope must be agreed in writing prior to commencement.</li>
+            <li>This agreement is governed by the laws of Western Australia.</li>
+        </ol>
+    </div>
+    
+    <!-- Signatures -->
+    <div class="signature-section">
+        <div class="signature-box">
+            <h3>PRINCIPAL (Spatialspec)</h3>
+            <div class="signature-line"></div>
+            <div class="signature-label">Signature</div>
+            <div class="field-row">
+                <span class="field-label">Name:</span>
+                <span class="field-value"></span>
+            </div>
+            <div class="field-row">
+                <span class="field-label">Date:</span>
+                <span class="field-value"></span>
+            </div>
+        </div>
+        <div class="signature-box">
+            <h3>SUBCONTRACTOR</h3>
+            <div class="signature-line"></div>
+            <div class="signature-label">Signature</div>
+            <div class="field-row">
+                <span class="field-label">Name:</span>
+                <span class="field-value"></span>
+            </div>
+            <div class="field-row">
+                <span class="field-label">Date:</span>
+                <span class="field-value"></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <span class="logo" style="font-size: 14px;"><span class="logo-spatial">Spatial</span><span class="logo-spec">spec</span></span>
+        <span style="margin: 0 10px;">|</span>
+        ABN: 75 761 156 217
+        <span style="margin: 0 10px;">|</span>
+        info@spatialspec.net
+        <span style="margin: 0 10px;">|</span>
+        Cowaramup & Perth, Western Australia
+    </div>
+</body>
+</html>
+

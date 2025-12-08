@@ -56,27 +56,25 @@ body {
     z-index: 100;
 }
 
-.header-stripe {
-    height: 3px;
-    background: var(--accent);
-}
-
 .header-content {
-    padding: 1rem 5%;
+    padding: 2rem 5%;
     background: rgba(10, 10, 11, 0.8);
     backdrop-filter: blur(10px);
 }
 
-.header-logo {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    letter-spacing: -0.03em;
+.header-content .hero-title {
+    margin-bottom: 0.5rem;
+    animation: fadeUp 1s var(--transition) forwards;
+    opacity: 0;
 }
 
-.logo-grey {
-    color: #888888;
+.hero-subtitle {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 400;
+    line-height: 1.7;
+    animation: fadeUp 1s var(--transition) 0.2s forwards;
+    opacity: 0;
 }
 
 /* =============================================
@@ -87,7 +85,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 6rem 5% 3rem;
+    padding: 8rem 5% 3rem;
     position: relative;
     overflow: hidden;
 }
@@ -144,8 +142,8 @@ body {
     height: 2px;
     background: var(--accent);
     border: none;
-    margin: 0.5rem 0 1.5rem 0;
-    animation: fadeUp 1s var(--transition) 0.45s forwards;
+    margin: 0 0 1.5rem 0;
+    animation: fadeUp 1s var(--transition) 0.3s forwards;
     opacity: 0;
     border-radius: 2px;
 }

@@ -46,6 +46,40 @@ body {
 }
 
 /* =============================================
+   Header
+   ============================================= */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+.header-stripe {
+    height: 3px;
+    background: var(--accent);
+}
+
+.header-content {
+    padding: 1rem 5%;
+    background: rgba(10, 10, 11, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.header-logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.03em;
+}
+
+.logo-grey {
+    color: #888888;
+}
+
+/* =============================================
    Hero Section
    ============================================= */
 .hero {
@@ -53,7 +87,7 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 2rem 5% 3rem;
+    padding: 6rem 5% 3rem;
     position: relative;
     overflow: hidden;
 }
@@ -256,28 +290,39 @@ body {
 }
 
 /* =============================================
-   Legal Buttons
+   Footer
    ============================================= */
-.legal-buttons {
+.site-footer {
+    padding: 2rem 5%;
+    border-top: 1px solid var(--border-color);
+    background: rgba(10, 10, 11, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+.footer-content {
+    max-width: 800px;
+}
+
+.footer-buttons {
     display: flex;
-    flex-direction: column;
-    margin-top: 1.5rem;
+    flex-direction: row;
+    gap: 0.5rem;
     align-items: flex-start;
 }
 
-.legal-buttons .btn-blue {
+.footer-buttons .btn-blue {
     padding: 0.35rem 0.75rem;
     font-size: 0.75rem;
     color: var(--text-secondary);
 }
 
-.legal-buttons .btn-blue:hover,
-.legal-buttons .btn-blue.active {
+.footer-buttons .btn-blue:hover,
+.footer-buttons .btn-blue.active {
     color: var(--accent);
     background: transparent;
 }
 
-.legal-buttons .service-dropdown .service-description {
+.footer-buttons .service-dropdown .service-description {
     font-size: 0.75rem;
 }
 
@@ -285,11 +330,11 @@ body {
    Copyright
    ============================================= */
 .copyright {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .copyright p {
-    color: var(--accent);
+    color: var(--text-secondary);
     font-size: 0.65rem;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }

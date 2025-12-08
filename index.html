@@ -10,10 +10,17 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <section class="hero">
+    <header class="site-header">
+        <div class="header-stripe"></div>
+        <div class="header-content">
+            <h1 class="header-logo">Spatial<span class="logo-grey">spec</span></h1>
+        </div>
+    </header>
+
+    <main class="hero">
         <div class="hero-content">
             <h1 class="hero-title">Spatial<span class="title-grey">spec</span></h1>
-            <p>Spatial specification and solutions for all.</p>
+            <p>Spatial specification and technical solutions.</p>
             <hr class="hero-divider">
             <div class="hero-buttons">
                 <div class="service-item">
@@ -21,16 +28,17 @@
                     <div class="service-dropdown">
                         <p class="service-description"><strong>Feature:</strong> Capture of site features including buildings, fences, trees, and services.</p>
                         <p class="service-description"><strong>Contour:</strong> Ground levels and contour mapping for design and drainage analysis.</p>
-                        <p class="service-description"><strong>Elevation:</strong> Building and floor level surveys for construction verification and compliance.</p>
                         <p class="service-description"><strong>Volume:</strong> Stockpile and excavation volume calculations for earthworks management.</p>
+                        <p class="service-description"><strong>Topographic:</strong> Comprehensive terrain mapping combining features, levels, and landforms.</p>
+                        <p class="service-description"><strong>Elevation:</strong> Building and floor level surveys for construction verification and compliance.</p>
                         <button class="contact-btn" data-toggle-form>Connect</button>
-                        <form class="contact-form-inline" action="https://script.google.com/macros/s/AKfycbxBqCY6bms5nbUNWKfK086iIOLZvfRgMo-S0bZ1w0ZI6v0v5Ijgtqxpmwuo89UVFxGFqQ/exec" method="POST">
-                            <input type="hidden" name="_subject" value="Survey Enquiry">
+                        <form class="contact-form-inline" data-subject="Survey">
                             <input type="text" name="name" placeholder="Name" required>
                             <input type="text" name="company" placeholder="Company">
                             <input type="email" name="email" placeholder="Email" required>
                             <textarea name="description" placeholder="Description" rows="3"></textarea>
                             <div class="form-actions">
+                                <label class="attach-btn"><input type="file" name="attachment" hidden>Attach</label>
                                 <button type="submit" class="submit-btn">Send</button>
                             </div>
                         </form>
@@ -41,17 +49,17 @@
                     <div class="service-dropdown">
                         <p class="service-description"><strong>Setout:</strong> Precise transfer of design coordinates to the field for accurate positioning of structures.</p>
                         <p class="service-description"><strong>As-con:</strong> Documentation of completed works to verify compliance with specifications.</p>
-                        <p class="service-description"><strong>Utilities:</strong> Underground service mapping for locating and documenting subsurface infrastructure.</p>
-                        <p class="service-description"><strong>Monitor:</strong> Periodic surveys to track movement, settlement, or deformation over time.</p>
                         <p class="service-description"><strong>Drone:</strong> Aerial surveys for large-scale mapping, progress monitoring, and site documentation.</p>
+                        <p class="service-description"><strong>Scan:</strong> 3D laser scanning for detailed capture of complex structures and environments.</p>
+                        <p class="service-description"><strong>Monitor:</strong> Periodic surveys to track movement, settlement, or deformation over time.</p>
                         <button class="contact-btn" data-toggle-form>Connect</button>
-                        <form class="contact-form-inline" action="https://script.google.com/macros/s/AKfycbxBqCY6bms5nbUNWKfK086iIOLZvfRgMo-S0bZ1w0ZI6v0v5Ijgtqxpmwuo89UVFxGFqQ/exec" method="POST">
-                            <input type="hidden" name="_subject" value="Engineer Enquiry">
+                        <form class="contact-form-inline" data-subject="Engineer">
                             <input type="text" name="name" placeholder="Name" required>
                             <input type="text" name="company" placeholder="Company">
                             <input type="email" name="email" placeholder="Email" required>
                             <textarea name="description" placeholder="Description" rows="3"></textarea>
                             <div class="form-actions">
+                                <label class="attach-btn"><input type="file" name="attachment" hidden>Attach</label>
                                 <button type="submit" class="submit-btn">Send</button>
                             </div>
                         </form>
@@ -61,24 +69,30 @@
                     <button class="btn-blue" data-service="draft">Draft</button>
                     <div class="service-dropdown">
                         <p class="service-description"><strong>General:</strong> CAD drafting services to produce plans, sections, and detailed drawings.</p>
+                        <p class="service-description"><strong>Survey:</strong> Production of survey plans from field data for design and documentation.</p>
+                        <p class="service-description"><strong>Data:</strong> Processing and organising survey data into usable formats and deliverables.</p>
                         <p class="service-description"><strong>Report:</strong> Technical reports and documentation for project requirements and compliance.</p>
                         <p class="service-description"><strong>Model:</strong> 3D modelling for visualisation, design review, and project coordination.</p>
-                        <p class="service-description"><strong>Data:</strong> Processing and organising survey data into usable formats and deliverables.</p>
                         <button class="contact-btn" data-toggle-form>Connect</button>
-                        <form class="contact-form-inline" action="https://script.google.com/macros/s/AKfycbxBqCY6bms5nbUNWKfK086iIOLZvfRgMo-S0bZ1w0ZI6v0v5Ijgtqxpmwuo89UVFxGFqQ/exec" method="POST">
-                            <input type="hidden" name="_subject" value="Draft Enquiry">
+                        <form class="contact-form-inline" data-subject="Draft">
                             <input type="text" name="name" placeholder="Name" required>
                             <input type="text" name="company" placeholder="Company">
                             <input type="email" name="email" placeholder="Email" required>
                             <textarea name="description" placeholder="Description" rows="3"></textarea>
                             <div class="form-actions">
+                                <label class="attach-btn"><input type="file" name="attachment" hidden>Attach</label>
                                 <button type="submit" class="submit-btn">Send</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
-            <div class="legal-buttons">
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-buttons">
                 <div class="service-item">
                     <button class="btn-blue" data-legal="legal-info">Legal</button>
                     <div class="service-dropdown">
@@ -94,6 +108,7 @@
                     <div class="service-dropdown">
                         <p class="service-description"><strong>Business name:</strong> Spatialspec</p>
                         <p class="service-description"><strong>ABN:</strong> 75 761 156 217</p>
+                        <p class="service-description"><strong>Location:</strong> Cowaramup and Perth, Western Australia</p>
                         <p class="service-description"><strong>Contact:</strong> info@spatialspec.net</p>
                     </div>
                 </div>
@@ -102,7 +117,7 @@
                 <p>&copy; 2025 Spatialspec. All rights reserved.</p>
             </div>
         </div>
-    </section>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>

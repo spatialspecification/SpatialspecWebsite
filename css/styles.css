@@ -43,6 +43,8 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* =============================================
@@ -58,8 +60,7 @@ body {
 
 .header-content {
     padding: 2rem 5%;
-    background: rgba(10, 10, 11, 0.8);
-    backdrop-filter: blur(10px);
+    background: transparent;
 }
 
 .header-content .hero-title {
@@ -292,9 +293,8 @@ body {
    ============================================= */
 .site-footer {
     padding: 2rem 5%;
-    border-top: 1px solid var(--border-color);
-    background: rgba(10, 10, 11, 0.6);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    margin-top: auto;
 }
 
 .footer-content {

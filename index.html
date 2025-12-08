@@ -95,9 +95,44 @@
                         <p class="service-description"><strong>Survey:</strong> Production of survey plans from field data for design and documentation.</p>
                         <p class="service-description"><strong>Data:</strong> Processing and organising survey data into usable formats and deliverables.</p>
                         <p class="service-description"><strong>Report:</strong> Technical reports and documentation for project requirements and compliance.</p>
-                        <p class="service-description"><strong>Model:</strong> 3D modelling for visualisation, design review, and project coordination.</p>
                         <button class="contact-btn" data-toggle-form>Connect</button>
                         <form class="contact-form-inline" data-subject="Draft">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="text" name="company" placeholder="Company">
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="description" placeholder="Description" rows="3"></textarea>
+                            <div class="form-actions">
+                                <label class="attach-btn"><input type="file" name="attachment" hidden>Attach</label>
+                                <button type="submit" class="submit-btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <button class="btn-blue" data-service="technical">Technical</button>
+                    <div class="service-dropdown">
+                        <p class="service-description"><strong>Model:</strong> 3D modelling for visualisation, design review, and project coordination.</p>
+                        <p class="service-description"><strong>Support:</strong> Supporting company staff members through technical difficulties with equipment, software, and workflow.</p>
+                        <p class="service-description"><strong>Training:</strong> Mentoring younger staff members to identify their goals and help them achieve them, improving their current workflows and professional development.</p>
+                        <button class="contact-btn" data-toggle-form>Connect</button>
+                        <form class="contact-form-inline" data-subject="Technical">
+                            <input type="text" name="name" placeholder="Name" required>
+                            <input type="text" name="company" placeholder="Company">
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="description" placeholder="Description" rows="3"></textarea>
+                            <div class="form-actions">
+                                <label class="attach-btn"><input type="file" name="attachment" hidden>Attach</label>
+                                <button type="submit" class="submit-btn">Send</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <button class="btn-blue" data-service="optimization">Optimization</button>
+                    <div class="service-dropdown">
+                        <p class="service-description"><strong>Workflow:</strong> Working with companies to identify where their workflows, systems, hardware, and software can be consolidated and improved.</p>
+                        <button class="contact-btn" data-toggle-form>Connect</button>
+                        <form class="contact-form-inline" data-subject="Optimization">
                             <input type="text" name="name" placeholder="Name" required>
                             <input type="text" name="company" placeholder="Company">
                             <input type="email" name="email" placeholder="Email" required>

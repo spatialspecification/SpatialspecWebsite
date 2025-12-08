@@ -305,8 +305,7 @@ body {
 
 .footer-buttons {
     display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
+    flex-direction: column;
     align-items: flex-start;
 }
 
@@ -330,11 +329,11 @@ body {
    Copyright
    ============================================= */
 .copyright {
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .copyright p {
-    color: var(--text-secondary);
+    color: var(--accent);
     font-size: 0.65rem;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }

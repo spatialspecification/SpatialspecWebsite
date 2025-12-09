@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Technical/Support Icon -->
+  <circle cx="32" cy="32" r="20" stroke="#00ff88" stroke-width="2"/>
+  <path d="M32 12a20 20 0 0 1 0 40" stroke="#00ff88" stroke-width="2" stroke-dasharray="4 2"/>
+  <circle cx="32" cy="32" r="8" stroke="#00ff88" stroke-width="2"/>
+  <circle cx="32" cy="32" r="3" fill="#00ff88"/>
+  <path d="M32 8v4M32 52v4M8 32h4M52 32h4" stroke="#00ff88" stroke-width="2"/>
+  <path d="M15 15l3 3M46 46l3 3M15 49l3-3M46 18l3-3" stroke="#00ff88" stroke-width="2"/>
+  <path d="M26 20l6 6 6-6" stroke="#00ff88" stroke-width="2"/>
+  <path d="M20 26l6 6-6 6" stroke="#00ff88" stroke-width="2"/>
+  <path d="M44 26l-6 6 6 6" stroke="#00ff88" stroke-width="2"/>
+  <path d="M26 44l6-6 6 6" stroke="#00ff88" stroke-width="2"/>
+</svg>
+

@@ -346,6 +346,11 @@ body {
     font-weight: 400;
     font-size: 0.75rem;
     transition: color 0.2s var(--transition);
+    align-self: flex-start;
+}
+
+.legal-buttons .service-item {
+    align-items: flex-start;
 }
 
 .btn-legal:hover,

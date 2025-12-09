@@ -56,9 +56,14 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 2rem 5% 3rem;
+    padding: 1rem 5%;
     position: relative;
     overflow: hidden;
+}
+
+header.hero {
+    padding-top: 1.5rem;
+    padding-bottom: 0;
 }
 
 .hero::before {

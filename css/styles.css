@@ -26,9 +26,15 @@ html {
 body {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-primary);
+    background-image: url('../assets/DesktopBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    min-height: 100vh;
 }
 
 /* =============================================

@@ -288,6 +288,8 @@ main {
 
 .btn-connect {
     align-self: flex-end;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
 }
 
 /* =============================================

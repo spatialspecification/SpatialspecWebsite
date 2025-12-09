@@ -13,6 +13,10 @@
     --transition: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* =============================================
+   Reset & Base
+   ============================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -48,7 +52,7 @@ main {
 }
 
 /* =============================================
-   Hero Section
+   Layout Sections
    ============================================= */
 
 .hero {
@@ -75,12 +79,7 @@ header.hero {
     height: 150%;
     background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.06) 0%, transparent 60%);
     animation: float 20s ease-in-out infinite;
-}
-
-@keyframes float {
-    0%, 100% { transform: translate(0, 0) rotate(0deg); }
-    33% { transform: translate(30px, -30px) rotate(5deg); }
-    66% { transform: translate(-20px, 20px) rotate(-5deg); }
+    pointer-events: none;
 }
 
 .hero-content {
@@ -92,10 +91,29 @@ header.hero {
     text-align: left;
 }
 
+/* =============================================
+   Animations
+   ============================================= */
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(30px, -30px) rotate(5deg); }
+    66% { transform: translate(-20px, 20px) rotate(-5deg); }
+}
+
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(40px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   Header Elements
+   ============================================= */
 
 .hero-title {
     font-family: 'JetBrains Mono', monospace;
@@ -136,7 +154,7 @@ header.hero {
 }
 
 /* =============================================
-   Service Navigation
+   Navigation
    ============================================= */
 
 .hero-buttons {
@@ -183,12 +201,37 @@ header.hero {
     color: var(--accent);
 }
 
+.btn-connect {
+    align-self: flex-end;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.75rem;
+}
+
 .btn-submit {
     margin-left: auto;
 }
 
+.btn-legal {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0.35rem 0.75rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    transition: color 0.2s var(--transition);
+    align-self: flex-start;
+}
+
+.btn-legal:hover,
+.btn-legal.active {
+    color: var(--accent);
+}
+
 /* =============================================
-   Service Dropdown
+   Dropdowns
    ============================================= */
 
 .service-dropdown {
@@ -200,11 +243,6 @@ header.hero {
 
 .service-dropdown.active {
     display: block;
-}
-
-@keyframes slideDown {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 .service-description {
@@ -221,7 +259,7 @@ header.hero {
 }
 
 /* =============================================
-   Service Panel (Gallery + Form Container)
+   Service Panel & Form
    ============================================= */
 
 .service-panel {
@@ -232,74 +270,11 @@ header.hero {
     background: transparent;
 }
 
-.service-gallery {
-    display: flex;
-    gap: 0.75rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.gallery-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem;
-    border-radius: 6px;
-    background: var(--bg-primary);
-    border: 1px solid var(--border-color);
-    transition: all 0.2s var(--transition);
-    min-width: 70px;
-}
-
-.gallery-item:hover {
-    border-color: var(--accent);
-    background: var(--bg-elevated);
-}
-
-.gallery-item svg {
-    width: 36px;
-    height: 36px;
-    color: var(--accent);
-    transition: transform 0.2s var(--transition);
-}
-
-.gallery-item:hover svg {
-    transform: scale(1.1);
-}
-
-.gallery-item span {
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    text-align: center;
-    font-weight: 400;
-}
-
-.gallery-item:hover span {
-    color: var(--text-primary);
-}
-
-/* =============================================
-   Service Form Container
-   ============================================= */
-
 .service-form-container {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
 }
-
-.btn-connect {
-    align-self: flex-end;
-    padding: 0.35rem 0.75rem;
-    font-size: 0.75rem;
-}
-
-/* =============================================
-   Contact Form
-   ============================================= */
 
 .contact-form {
     display: none;
@@ -342,7 +317,7 @@ header.hero {
 }
 
 /* =============================================
-   Legal Buttons
+   Footer
    ============================================= */
 
 .legal-buttons {
@@ -352,36 +327,13 @@ header.hero {
     align-items: flex-start;
 }
 
-.btn-legal {
-    background: transparent;
-    color: var(--text-secondary);
-    padding: 0.35rem 0.75rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 400;
-    font-size: 0.75rem;
-    transition: color 0.2s var(--transition);
-    align-self: flex-start;
-}
-
 .legal-buttons .service-item {
     align-items: flex-start;
-}
-
-.btn-legal:hover,
-.btn-legal.active {
-    color: var(--accent);
 }
 
 .legal-buttons .service-description {
     font-size: 0.75rem;
 }
-
-/* =============================================
-   Copyright
-   ============================================= */
 
 .copyright {
     margin-top: 1rem;
@@ -398,6 +350,10 @@ header.hero {
    ============================================= */
 
 @media (max-width: 600px) {
+    .hero {
+        padding: 1rem 4%;
+    }
+
     .hero-buttons {
         width: 100%;
     }
@@ -407,21 +363,11 @@ header.hero {
         justify-content: center;
     }
 
-    .service-gallery {
-        justify-content: center;
+    .service-description {
+        font-size: 0.85rem;
     }
 
-    .gallery-item {
-        min-width: 60px;
-        padding: 0.5rem;
-    }
-
-    .gallery-item svg {
-        width: 28px;
-        height: 28px;
-    }
-
-    .gallery-item span {
-        font-size: 0.6rem;
+    .hero-title {
+        font-size: clamp(1.75rem, 8vw, 2.5rem);
     }
 }

@@ -399,6 +399,32 @@ header.hero {
     height: 100%;
 }
 
+/* Mini Workflow (inline with service descriptions) */
+.workflow-mini {
+    margin: 0.75rem 0 1.25rem 0;
+    gap: 0.35rem;
+}
+
+.workflow-mini .workflow-step {
+    padding: 0.6rem 0.75rem;
+    min-width: 70px;
+    gap: 0.3rem;
+}
+
+.workflow-mini .workflow-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.workflow-mini .workflow-label {
+    font-size: 0.65rem;
+}
+
+.workflow-mini .workflow-arrow {
+    width: 16px;
+    height: 16px;
+}
+
 /* =============================================
    Footer
    ============================================= */
@@ -474,5 +500,20 @@ header.hero {
     .workflow-step .workflow-label,
     .workflow-step .workflow-sublabel {
         text-align: left;
+    }
+
+    /* Mini workflow mobile adjustments */
+    .workflow-mini {
+        gap: 0.25rem;
+    }
+
+    .workflow-mini .workflow-step {
+        gap: 0.5rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .workflow-mini .workflow-arrow {
+        width: 14px;
+        height: 14px;
     }
 }

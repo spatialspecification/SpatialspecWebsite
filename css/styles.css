@@ -316,6 +316,90 @@ header.hero {
 }
 
 /* =============================================
+   Workflow Section
+   ============================================= */
+
+.workflow-section {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.workflow-title {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+}
+
+.workflow-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: rgba(10, 10, 11, 0.6);
+    min-width: 100px;
+    transition: all 0.3s var(--transition);
+}
+
+.workflow-step:hover {
+    border-color: var(--accent);
+    background: rgba(0, 255, 136, 0.05);
+}
+
+.workflow-step:hover .workflow-icon {
+    color: var(--accent);
+}
+
+.workflow-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--text-secondary);
+    transition: color 0.3s var(--transition);
+}
+
+.workflow-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.workflow-label {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.workflow-sublabel {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
+.workflow-arrow {
+    width: 24px;
+    height: 24px;
+    color: var(--accent);
+    flex-shrink: 0;
+}
+
+.workflow-arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* =============================================
    Footer
    ============================================= */
 
@@ -368,5 +452,27 @@ header.hero {
 
     .hero-title {
         font-size: clamp(1.75rem, 8vw, 2.5rem);
+    }
+
+    .workflow-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .workflow-step {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+        min-width: auto;
+    }
+
+    .workflow-arrow {
+        transform: rotate(90deg);
+        align-self: center;
+    }
+
+    .workflow-step .workflow-label,
+    .workflow-step .workflow-sublabel {
+        text-align: left;
     }
 }

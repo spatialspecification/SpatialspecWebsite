@@ -259,23 +259,6 @@ header.hero {
 }
 
 /* =============================================
-   Service Image
-   ============================================= */
-
-.service-image {
-    margin: 1rem 0;
-    max-width: 500px;
-}
-
-.service-image img {
-    width: 100%;
-    height: auto;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
-    display: block;
-}
-
-/* =============================================
    Service Panel & Form
    ============================================= */
 

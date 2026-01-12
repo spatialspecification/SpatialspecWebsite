@@ -123,8 +123,8 @@ header.hero {
 }
 
 .hero-logo {
-    width: 56px;
     height: 56px;
+    width: auto;
     animation: fadeUp 1s var(--transition) 0.1s forwards;
     opacity: 0;
     flex-shrink: 0;
@@ -476,8 +476,8 @@ header.hero {
     }
 
     .hero-logo {
-        width: 44px;
         height: 44px;
+        width: auto;
     }
 
     .hero-brand {

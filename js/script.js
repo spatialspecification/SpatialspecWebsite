@@ -63,6 +63,15 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /**
+     * Service dropdown styling - add class when value selected
+     */
+    document.querySelectorAll('.contact-form select[name="service"]').forEach(select => {
+        select.addEventListener('change', function() {
+            this.classList.toggle('has-value', this.value !== '');
+        });
+    });
+
+    /**
      * Generate unique inquiry number
      * @returns {number} 4-digit inquiry number
      */

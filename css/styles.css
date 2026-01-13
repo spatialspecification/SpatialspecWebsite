@@ -323,6 +323,11 @@ header.hero {
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     padding-right: 2rem;
+    color: #666666;
+}
+
+.contact-form select.has-value {
+    color: var(--text-primary);
 }
 
 .contact-form select option {

@@ -485,38 +485,27 @@ header.hero {
     }
 
     .workflow-container {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .workflow-step {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 1rem;
-        min-width: auto;
-    }
-
-    .workflow-arrow {
-        transform: rotate(90deg);
-        align-self: center;
-    }
-
-    .workflow-step .workflow-label {
-        text-align: left;
-    }
-
-    /* Mini workflow mobile adjustments */
-    .workflow-mini {
-        gap: 0.25rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 0.5rem;
     }
 
     .workflow-mini .workflow-step {
-        gap: 0.5rem;
         padding: 0.5rem 0.6rem;
+        min-width: 60px;
+    }
+
+    .workflow-mini .workflow-label {
+        font-size: 0.55rem;
+    }
+
+    .workflow-mini .workflow-icon {
+        width: 16px;
+        height: 16px;
     }
 
     .workflow-mini .workflow-arrow {
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
     }
 }

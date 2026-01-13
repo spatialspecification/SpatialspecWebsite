@@ -89,67 +89,33 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Service dropdown styling - add class when value selected
      */
-    document.querySelectorAll('.contact-form select[name="service"]').forEach(select => {
+    document.querySelectorAll('.contact-form select[name="entry.846544278"]').forEach(select => {
         select.addEventListener('change', function() {
             this.classList.add('has-value');
         });
     });
 
     /**
-     * Generate unique inquiry number
-     * @returns {number} 4-digit inquiry number
-     */
-    function generateInquiryNumber() {
-        return Math.floor(1000 + Math.random() * 9000);
-    }
-
-    /**
-     * Form submission handler - sends via mailto
+     * Form submission handler - submits to Google Forms
      */
     document.querySelectorAll('.contact-form').forEach(form => {
         form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(this);
-            const inquiryNumber = generateInquiryNumber();
-            const selectedService = formData.get('service');
-            const userDescription = formData.get('description') || '';
-            
-            // Build description with service prefix if selected
-            let fullDescription = userDescription;
-            if (selectedService) {
-                fullDescription = `[${selectedService}] ${userDescription}`.trim();
-            }
-            
-            const subject = `${inquiryNumber}: Inquiry`;
-            const body = [
-                `Inquiry Number: ${inquiryNumber}`,
-                `Service: ${selectedService || 'General'}`,
-                ``,
-                `Name: ${formData.get('name')}`,
-                `Company: ${formData.get('company') || 'N/A'}`,
-                `Email: ${formData.get('email')}`,
-                ``,
-                `Description:`,
-                fullDescription || 'No description provided'
-            ].join('\r\n');
-            
-            // Open email client
-            window.location.href = `mailto:info@spatialspec.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
+            // Allow the form to submit to Google Forms via hidden iframe
             // Show "Sent!" confirmation
             const submitBtn = this.querySelector('.btn-submit');
             submitBtn.textContent = 'Sent!';
             submitBtn.classList.add('sent');
             
-            // Reset form after submission
-            this.reset();
-            
-            // Reset service dropdown styling
-            const serviceSelect = this.querySelector('select[name="service"]');
-            if (serviceSelect) {
-                serviceSelect.classList.remove('has-value');
-            }
+            // Reset form after a short delay to allow submission
+            setTimeout(() => {
+                this.reset();
+                
+                // Reset service dropdown styling
+                const serviceSelect = this.querySelector('select[name="entry.846544278"]');
+                if (serviceSelect) {
+                    serviceSelect.classList.remove('has-value');
+                }
+            }, 100);
             
             // Reset button after delay
             setTimeout(() => {

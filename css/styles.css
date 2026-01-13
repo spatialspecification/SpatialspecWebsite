@@ -219,10 +219,12 @@ header.hero {
 
 .btn-connect {
     align-self: flex-end;
+    font-size: 0.85rem;
 }
 
 .btn-submit {
     margin-right: auto;
+    font-size: 0.85rem;
 }
 
 .btn-submit.sent {

@@ -509,6 +509,15 @@ header.hero {
 
     .service-description {
         font-size: 0.85rem;
+        text-align: left;
+    }
+    
+    .service-dropdown {
+        text-align: left;
+    }
+    
+    .service-item {
+        align-items: flex-start;
     }
 
     .hero-title {

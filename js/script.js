@@ -8,11 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Close all dropdowns and reset forms
      */
-    function closeAllDropdowns() {
+    function closeAllDropdowns(keepServicesMenu = false) {
         document.querySelectorAll('.service-dropdown').forEach(dropdown => {
+            // Keep services menu open if specified
+            if (keepServicesMenu && dropdown.classList.contains('services-menu')) {
+                return;
+            }
             dropdown.classList.remove('active');
         });
         document.querySelectorAll('.btn-service, .btn-legal').forEach(button => {
+            // Keep services menu button active if specified
+            if (keepServicesMenu && button.dataset.service === 'services-menu') {
+                return;
+            }
             button.classList.remove('active');
         });
         document.querySelectorAll('.contact-form').forEach(form => {
@@ -33,8 +41,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 const dropdown = this.nextElementSibling;
                 const isActive = dropdown.classList.contains('active');
+                const isInsideServicesMenu = this.closest('.services-menu');
                 
-                closeAllDropdowns();
+                // If clicking inside services menu, keep it open
+                if (isInsideServicesMenu) {
+                    // Close other service dropdowns inside services menu, but keep services menu open
+                    document.querySelectorAll('.services-menu .service-dropdown').forEach(d => {
+                        if (d !== dropdown) d.classList.remove('active');
+                    });
+                    document.querySelectorAll('.services-menu .btn-service').forEach(b => {
+                        if (b !== this) b.classList.remove('active');
+                    });
+                } else {
+                    closeAllDropdowns();
+                }
                 
                 if (!isActive) {
                     dropdown.classList.add('active');

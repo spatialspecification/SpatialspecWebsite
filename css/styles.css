@@ -266,6 +266,19 @@ header.hero {
     display: block;
 }
 
+/* Nested services menu */
+.services-menu {
+    padding: 0.5rem 0;
+}
+
+.services-menu .service-item {
+    margin-left: 0;
+}
+
+.services-menu .service-dropdown {
+    padding-left: 1rem;
+}
+
 .service-description {
     color: var(--text-muted);
     font-size: 0.9rem;

@@ -78,20 +78,27 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const formData = new FormData(this);
-            const service = this.dataset.subject;
             const inquiryNumber = generateInquiryNumber();
+            const selectedService = formData.get('service');
+            const userDescription = formData.get('description') || '';
             
-            const subject = `${inquiryNumber}: ${service} Inquiry`;
+            // Build description with service prefix if selected
+            let fullDescription = userDescription;
+            if (selectedService) {
+                fullDescription = `[${selectedService}] ${userDescription}`.trim();
+            }
+            
+            const subject = `${inquiryNumber}: Inquiry`;
             const body = [
                 `Inquiry Number: ${inquiryNumber}`,
-                `Service: ${service}`,
+                `Service: ${selectedService || 'General'}`,
                 ``,
                 `Name: ${formData.get('name')}`,
                 `Company: ${formData.get('company') || 'N/A'}`,
                 `Email: ${formData.get('email')}`,
                 ``,
                 `Description:`,
-                formData.get('description') || 'No description provided'
+                fullDescription || 'No description provided'
             ].join('\r\n');
             
             // Open email client

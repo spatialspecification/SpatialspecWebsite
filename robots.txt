@@ -1,0 +1,7 @@
+# Spatialspec robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://spatialspec.net/sitemap.xml
+

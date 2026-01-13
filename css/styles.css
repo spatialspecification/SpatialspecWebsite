@@ -6,8 +6,8 @@
     --bg-primary: #0a0a0b;
     --bg-elevated: #18181b;
     --text-primary: #fafafa;
-    --text-secondary: #b5b5be;
-    --text-muted: #bbbbbb;
+    --text-secondary: #c5c5ce;
+    --text-muted: #cccccc;
     --accent: #00ff88;
     --border-color: #27272a;
     --transition: cubic-bezier(0.4, 0, 0.2, 1);
@@ -144,7 +144,7 @@ header.hero {
 }
 
 .title-grey {
-    color: #999999;
+    color: #aaaaaa;
 }
 
 .hero-tagline {
@@ -324,11 +324,11 @@ header.hero {
 .contact-form select {
     cursor: pointer;
     appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23999999' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 0.75rem center;
     padding-right: 2rem;
-    color: #888888;
+    color: #999999;
 }
 
 .contact-form select.has-value {
@@ -342,7 +342,7 @@ header.hero {
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #888888;
+    color: #999999;
 }
 
 .contact-form input:focus,
@@ -471,7 +471,7 @@ header.hero {
 }
 
 .copyright p {
-    color: #999999;
+    color: #aaaaaa;
     font-size: 0.65rem;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }

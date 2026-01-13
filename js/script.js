@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     document.querySelectorAll('.contact-form select[name="service"]').forEach(select => {
         select.addEventListener('change', function() {
-            this.classList.toggle('has-value', this.value !== '');
+            this.classList.add('has-value');
         });
     });
 

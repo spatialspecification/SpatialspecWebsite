@@ -303,13 +303,16 @@
                             <div class="service-form-container">
                                 <button class="btn-connect" data-toggle-form>Connect</button>
                                 <form class="contact-form" 
-                                    action="https://docs.google.com/forms/d/e/1FAIpQLSdnUXR0HDRmMm-GIx5xk_Pcyp_UPDIbahujArgPsqdvfUsmRg/formResponse" 
-                                    method="POST" 
-                                    target="hidden_iframe">
-                                    <input type="text" name="entry.1318378398" placeholder="Name" required>
-                                    <input type="text" name="entry.43022974" placeholder="Company">
-                                    <input type="email" name="entry.957720595" placeholder="Email" required>
-                                    <select name="entry.846544278">
+                                    action="https://api.web3forms.com/submit" 
+                                    method="POST">
+                                    <input type="hidden" name="access_key" value="d5390f3c-3b63-4b08-a04f-c46df3c624ea">
+                                    <input type="hidden" name="subject" value="New Spatialspec Inquiry">
+                                    <input type="hidden" name="from_name" value="Spatialspec Website">
+                                    <input type="hidden" name="redirect" value="https://spatialspec.net/">
+                                    <input type="text" name="name" placeholder="Name" required>
+                                    <input type="text" name="company" placeholder="Company">
+                                    <input type="email" name="email" placeholder="Email" required>
+                                    <select name="service">
                                         <option value="" disabled selected hidden>Service</option>
                                         <option value="General Inquiry">General Inquiry</option>
                                         <option value="Feature/ Contour and Detail Survey">Feature/ Contour and Detail Survey</option>
@@ -324,10 +327,10 @@
                                         <option value="Website Design">Website Design</option>
                                         <option value="Graphic/ Logo Design">Graphic/ Logo Design</option>
                                     </select>
-                                    <textarea name="entry.1219935974" placeholder="Description" rows="3"></textarea>
+                                    <textarea name="message" placeholder="Description" rows="3"></textarea>
+                                    <input type="hidden" name="redirect" value="https://spatialspec.net/">
                                     <button type="submit" class="btn-submit">Send</button>
                                 </form>
-                                <iframe name="hidden_iframe" style="display:none;"></iframe>
                             </div>
                         </div>
                     </div>

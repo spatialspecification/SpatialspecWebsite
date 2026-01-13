@@ -89,39 +89,58 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Service dropdown styling - add class when value selected
      */
-    document.querySelectorAll('.contact-form select[name="entry.846544278"]').forEach(select => {
+    document.querySelectorAll('.contact-form select[name="service"]').forEach(select => {
         select.addEventListener('change', function() {
             this.classList.add('has-value');
         });
     });
 
     /**
-     * Form submission handler - submits to Google Forms
+     * Form submission handler - submits to Web3Forms
      */
     document.querySelectorAll('.contact-form').forEach(form => {
         form.addEventListener('submit', function(e) {
-            // Allow the form to submit to Google Forms via hidden iframe
-            // Show "Sent!" confirmation
+            e.preventDefault();
+            
+            const formData = new FormData(this);
             const submitBtn = this.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            
+            // Show "Sent!" confirmation
             submitBtn.textContent = 'Sent!';
             submitBtn.classList.add('sent');
+            submitBtn.disabled = true;
             
-            // Reset form after a short delay to allow submission
-            setTimeout(() => {
+            // Submit form to Web3Forms
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Reset form
                 this.reset();
                 
                 // Reset service dropdown styling
-                const serviceSelect = this.querySelector('select[name="entry.846544278"]');
+                const serviceSelect = this.querySelector('select[name="service"]');
                 if (serviceSelect) {
                     serviceSelect.classList.remove('has-value');
                 }
-            }, 100);
-            
-            // Reset button after delay
-            setTimeout(() => {
-                submitBtn.textContent = 'Send';
+                
+                // Reset button after delay
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.classList.remove('sent');
+                    submitBtn.disabled = false;
+                }, 2000);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Reset button even on error
+                submitBtn.textContent = originalText;
                 submitBtn.classList.remove('sent');
-            }, 2000);
+                submitBtn.disabled = false;
+            });
         });
     });
 

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3Forms Test - Spatialspec Contact Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        button {
+            background: #00ff88;
+            color: #000;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background: #00cc6a;
+        }
+        .note {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .note strong {
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Spatialspec Contact Form</h1>
+        
+        <div class="note">
+            <strong>Setup Instructions:</strong><br>
+            1. Go to <a href="https://web3forms.com/#start" target="_blank">web3forms.com</a><br>
+            2. Enter: rhett@spatialspec.net<br>
+            3. Copy your access key<br>
+            4. Replace "d5390f3c-3b63-4b08-a04f-c46df3c624ea" below with your actual key
+        </div>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <!-- Replace d5390f3c-3b63-4b08-a04f-c46df3c624ea with your actual access key from web3forms.com -->
+            <input type="hidden" name="access_key" value="d5390f3c-3b63-4b08-a04f-c46df3c624ea">
+            <input type="hidden" name="subject" value="New Spatialspec Inquiry">
+            <input type="hidden" name="from_name" value="Spatialspec Website">
+            <input type="hidden" name="redirect" value="https://spatialspec.net/">
+
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service</label>
+                <select id="service" name="service">
+                    <option value="" disabled selected>Select a service</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                    <option value="Feature/ Contour and Detail Survey">Feature/ Contour and Detail Survey</option>
+                    <option value="Elevation/ Aspect Survey">Elevation/ Aspect Survey</option>
+                    <option value="Construction Setout/ As-built Survey">Construction Setout/ As-built Survey</option>
+                    <option value="Volume/ Stockpile Calculations">Volume/ Stockpile Calculations</option>
+                    <option value="Monitoring Survey">Monitoring Survey</option>
+                    <option value="Underground Service Mapping">Underground Service Mapping</option>
+                    <option value="3D Scanning & Modelling">3D Scanning & Modelling</option>
+                    <option value="Technical Drawings">Technical Drawings</option>
+                    <option value="Technical Support">Technical Support</option>
+                    <option value="Website Design">Website Design</option>
+                    <option value="Graphic/ Logo Design">Graphic/ Logo Design</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Description</label>
+                <textarea id="message" name="message" rows="4"></textarea>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
+

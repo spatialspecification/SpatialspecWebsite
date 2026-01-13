@@ -227,6 +227,11 @@ header.hero {
     margin-right: auto;
 }
 
+.btn-submit.sent {
+    background: var(--accent);
+    color: var(--bg-primary);
+}
+
 .btn-legal {
     background: transparent;
     color: var(--text-secondary);

@@ -113,8 +113,25 @@ document.addEventListener('DOMContentLoaded', function() {
             // Open email client
             window.location.href = `mailto:info@spatialspec.net?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             
+            // Show "Sent!" confirmation
+            const submitBtn = this.querySelector('.btn-submit');
+            submitBtn.textContent = 'Sent!';
+            submitBtn.classList.add('sent');
+            
             // Reset form after submission
             this.reset();
+            
+            // Reset service dropdown styling
+            const serviceSelect = this.querySelector('select[name="service"]');
+            if (serviceSelect) {
+                serviceSelect.classList.remove('has-value');
+            }
+            
+            // Reset button after delay
+            setTimeout(() => {
+                submitBtn.textContent = 'Send';
+                submitBtn.classList.remove('sent');
+            }, 2000);
         });
     });
 

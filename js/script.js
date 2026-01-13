@@ -52,13 +52,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     document.querySelectorAll('.services-menu .btn-service').forEach(b => {
                         if (b !== this) b.classList.remove('active');
                     });
+                    
+                    // Toggle the clicked dropdown
+                    dropdown.classList.toggle('active', !isActive);
+                    this.classList.toggle('active', !isActive);
                 } else {
                     closeAllDropdowns();
-                }
-                
-                if (!isActive) {
-                    dropdown.classList.add('active');
-                    this.classList.add('active');
+                    
+                    if (!isActive) {
+                        dropdown.classList.add('active');
+                        this.classList.add('active');
+                    }
                 }
             });
         });

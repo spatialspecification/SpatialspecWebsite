@@ -345,7 +345,7 @@ header.hero {
 }
 
 .contact-form select.has-value {
-    color: var(--text-primary);
+    color: var(--text-primary) !important;
 }
 
 .contact-form select option {

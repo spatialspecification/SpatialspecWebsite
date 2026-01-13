@@ -90,8 +90,18 @@ document.addEventListener('DOMContentLoaded', function() {
      * Service dropdown styling - add class when value selected
      */
     document.querySelectorAll('.contact-form select[name="service"]').forEach(select => {
+        // Check initial state
+        if (select.value && select.value !== '') {
+            select.classList.add('has-value');
+        }
+        
+        // Update on change
         select.addEventListener('change', function() {
-            this.classList.add('has-value');
+            if (this.value && this.value !== '') {
+                this.classList.add('has-value');
+            } else {
+                this.classList.remove('has-value');
+            }
         });
     });
 

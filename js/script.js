@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeConnectPage() {
         const connectPage = document.getElementById('connect-page');
         const navButtons = document.querySelector('.hero-buttons');
-        const connectButton = document.querySelector('.btn-connect-footer');
+        const connectButton = document.querySelector('.btn-connect-footer-link');
         if (connectPage && navButtons) {
             connectPage.classList.remove('show');
             connectPage.style.display = 'none';
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Connect page toggle for footer Connect button
      */
-    document.querySelectorAll('.btn-connect-footer').forEach(button => {
+    document.querySelectorAll('.btn-connect-footer-link').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
             const connectPage = document.getElementById('connect-page');

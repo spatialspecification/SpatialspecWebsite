@@ -497,8 +497,8 @@ header.hero {
 }
 
 .copyright p {
-    color: #aaaaaa;
-    font-size: 0.65rem;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 

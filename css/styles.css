@@ -579,65 +579,6 @@ header .hero-brand {
     width: 100%;
 }
 
-.legal-page-title {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--text-primary);
-    padding: 0.5rem 1.25rem;
-    margin: 0;
-}
-
-.legal-section {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.legal-section-title {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 400;
-    color: var(--text-primary);
-    padding: 0.5rem 1.25rem;
-    margin: 0;
-    background: transparent;
-    border: none;
-    cursor: default;
-    text-align: left;
-}
-
-.legal-content {
-    padding: 0 1.25rem;
-}
-
-.legal-content p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    font-weight: 400;
-    line-height: 1.7;
-    margin: 0 0 1rem 0;
-}
-
-.btn-close-legal {
-    background: transparent;
-    color: var(--text-primary);
-    padding: 0.5rem 1.25rem;
-    border-radius: 6px;
-    border: none;
-    cursor: pointer;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 400;
-    font-size: 0.9rem;
-    margin-top: 0.5rem;
-    transition: all 0.2s var(--transition);
-}
-
-.btn-close-legal:hover {
-    background: transparent;
-    color: var(--accent);
-}
-
 .legal-buttons {
     display: flex;
     flex-direction: row;

@@ -25,12 +25,6 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-y: hidden;
-    height: 100%;
-}
-
-html.loaded {
-    overflow-y: auto;
 }
 
 body {
@@ -44,21 +38,16 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
-    overflow-y: hidden;
     min-height: 100vh;
-    height: 100%;
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
 }
 
-html.loaded body {
-    overflow-y: auto;
-}
-
 main {
     flex: 1;
+    padding-bottom: 250px;
 }
 
 .site-footer {
@@ -724,10 +713,18 @@ header .hero-brand {
         left: 0;
         right: 0;
         width: 100%;
+        display: block;
+        visibility: visible;
+        z-index: 100;
     }
 
     .site-footer.hero {
         padding: 1.5rem 4%;
+    }
+
+    /* Ensure main content doesn't cover footer on mobile */
+    main {
+        padding-bottom: 200px;
     }
 
     .hero-buttons {

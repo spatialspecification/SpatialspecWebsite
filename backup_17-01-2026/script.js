@@ -4,11 +4,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Prevent scrollbar during page load animations
-    // Enable scrolling after animations complete (1.5s to account for all fadeUp animations)
-    setTimeout(function() {
-        document.documentElement.classList.add('loaded');
-    }, 1500);
     
     /**
      * Close all dropdowns and reset forms

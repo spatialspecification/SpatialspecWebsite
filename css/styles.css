@@ -70,8 +70,11 @@ main {
 }
 
 header.hero {
-    padding-top: 1.5rem;
-    padding-bottom: 0;
+    padding: 0;
+}
+
+.site-footer.hero {
+    padding: 0;
 }
 
 .hero::before {

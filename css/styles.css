@@ -220,7 +220,14 @@ header.hero {
 .btn-connect {
     align-self: flex-end;
     font-size: 0.85rem;
-    border: 10px solid var(--accent);
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.btn-connect {
+    -webkit-text-stroke: 10px var(--accent);
+    text-stroke: 10px var(--accent);
 }
 
 .hero-brand .btn-connect {

@@ -550,8 +550,7 @@ header .hero-brand {
     transition: color 0.2s var(--transition);
 }
 
-.btn-footer-link:hover,
-.btn-footer-link.active {
+.btn-footer-link:hover {
     color: var(--accent);
 }
 

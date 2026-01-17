@@ -25,6 +25,12 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-y: hidden;
+    height: 100%;
+}
+
+html.loaded {
+    overflow-y: auto;
 }
 
 body {
@@ -32,19 +38,23 @@ body {
     background-color: var(--bg-primary);
     background-image: url('../assets/DesktopBackground.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: fixed;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    overflow-y: hidden;
     min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+}
+
+html.loaded body {
+    overflow-y: auto;
 }
 
 main {
@@ -59,8 +69,6 @@ main {
     right: 0;
     width: 100%;
     z-index: 100;
-    will-change: auto;
-    transform: translateZ(0);
 }
 
 
@@ -795,11 +803,5 @@ header .hero-brand {
 
     #connect-page .service-panel {
         width: 100%;
-    }
-
-    body {
-        background-attachment: scroll;
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
     }
 }

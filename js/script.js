@@ -4,6 +4,11 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Prevent scrollbar during page load animations
+    // Enable scrolling after animations complete (1.5s to account for all fadeUp animations)
+    setTimeout(function() {
+        document.documentElement.classList.add('loaded');
+    }, 1500);
     
     /**
      * Close all dropdowns and reset forms
@@ -72,14 +77,22 @@ document.addEventListener('DOMContentLoaded', function() {
         const connectPage = document.getElementById('connect-page');
         const navButtons = document.querySelector('.hero-buttons');
         const connectButton = document.querySelector('.btn-connect-footer-link');
+        const siteFooter = document.querySelector('.site-footer');
         if (connectPage && navButtons) {
             const isMobile = window.innerWidth <= 600;
-            const currentScrollY = window.scrollY;
             
             connectPage.classList.remove('show');
             // Reset transform immediately to prevent background shift
             connectPage.style.transform = '';
             connectPage.style.opacity = '0';
+            
+            // Ensure footer is always visible
+            if (siteFooter) {
+                siteFooter.style.display = '';
+                siteFooter.style.visibility = 'visible';
+                siteFooter.style.position = 'fixed';
+                siteFooter.style.bottom = '0';
+            }
             
             // Restore body overflow and position on mobile
             if (isMobile) {

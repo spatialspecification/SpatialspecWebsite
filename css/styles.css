@@ -229,7 +229,6 @@ header .hero-brand {
    ============================================= */
 
 .btn-service,
-.btn-connect,
 .btn-submit {
     background: transparent;
     color: var(--text-primary);
@@ -607,8 +606,7 @@ header .hero-brand {
         width: 100%;
     }
 
-    .btn-service,
-    .btn-connect {
+    .btn-service {
         width: 100%;
         justify-content: center;
     }

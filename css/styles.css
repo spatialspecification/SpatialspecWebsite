@@ -527,7 +527,7 @@ header.hero {
 
 @media (max-width: 600px) {
     .hero {
-        padding: 1rem 4%;
+        padding: 1.5rem 4%;
     }
 
     .hero-buttons {

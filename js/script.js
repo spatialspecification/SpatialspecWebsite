@@ -79,10 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeLegalPage() {
         const legalPage = document.getElementById('legal-page');
         const navButtons = document.querySelector('.hero-buttons');
+        const legalButton = document.querySelector('.btn-footer-link[data-legal="legal"]');
         if (legalPage && navButtons) {
             legalPage.classList.remove('show');
             legalPage.style.display = 'none';
             navButtons.style.display = 'flex';
+            if (legalButton) {
+                legalButton.classList.remove('active');
+            }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }
@@ -105,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Close all dropdowns
                 closeAllDropdowns();
+                // Add active class to Legal button
+                this.classList.add('active');
                 // Hide nav and show legal page
                 navButtons.style.display = 'none';
                 legalPage.style.opacity = '0';

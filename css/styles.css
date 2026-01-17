@@ -513,6 +513,7 @@ header.hero {
     margin: 0;
     margin-left: auto;
     text-align: right;
+    flex-shrink: 0;
 }
 
 .copyright p {

@@ -59,6 +59,8 @@ main {
     right: 0;
     width: 100%;
     z-index: 100;
+    will-change: auto;
+    transform: translateZ(0);
 }
 
 
@@ -596,13 +598,14 @@ header .hero-brand {
     background: var(--accent);
     color: #000000;
     padding: 0.35rem 0.9rem;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 6px;
     cursor: pointer;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
     font-size: 1.025rem;
-    transition: all 0.2s var(--transition);
+    transition: background-color 0.2s var(--transition), color 0.2s var(--transition), border-color 0.2s var(--transition);
+    box-sizing: border-box;
 }
 
 .btn-footer-link:hover {

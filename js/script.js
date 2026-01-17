@@ -73,18 +73,35 @@ document.addEventListener('DOMContentLoaded', function() {
         const navButtons = document.querySelector('.hero-buttons');
         const connectButton = document.querySelector('.btn-connect-footer-link');
         if (connectPage && navButtons) {
+            const isMobile = window.innerWidth <= 600;
+            const currentScrollY = window.scrollY;
+            
             connectPage.classList.remove('show');
-            // Reset transform for next open
+            // Reset transform immediately to prevent background shift
+            connectPage.style.transform = '';
+            connectPage.style.opacity = '0';
+            
+            // Restore body overflow and position on mobile
+            if (isMobile) {
+                const scrollY = document.body.style.top;
+                document.body.style.position = '';
+                document.body.style.width = '';
+                document.body.style.top = '';
+                document.body.style.overflow = '';
+                if (scrollY) {
+                    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+                }
+            }
+            
+            // Hide after animation completes
             setTimeout(() => {
                 connectPage.style.display = 'none';
-                connectPage.style.opacity = '0';
-                connectPage.style.transform = '';
             }, 300);
             navButtons.style.display = 'flex';
             if (connectButton) {
                 connectButton.classList.remove('active');
             }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Don't scroll to top to prevent footer jump
         }
     }
 
@@ -157,21 +174,45 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Hide nav and show connect page
                 navButtons.style.display = 'none';
                 
-                // Get Connect button position for popup animation
-                const connectButtonRect = this.getBoundingClientRect();
-                const buttonCenterX = connectButtonRect.left + (connectButtonRect.width / 2);
-                const buttonCenterY = connectButtonRect.top + (connectButtonRect.height / 2);
-                const viewportCenterX = window.innerWidth / 2;
-                const viewportCenterY = window.innerHeight / 2;
+                // Check if mobile device
+                const isMobile = window.innerWidth <= 600;
                 
-                // Calculate transform to animate from button position to center
-                const startX = buttonCenterX - viewportCenterX;
-                const startY = buttonCenterY - viewportCenterY;
+                // Prevent background jump on mobile by preserving scroll position
+                const currentScrollY = window.scrollY;
+                
+                // Get Connect button position for popup animation (desktop only)
+                let startX = 0;
+                let startY = 0;
+                if (!isMobile) {
+                    const connectButtonRect = this.getBoundingClientRect();
+                    const buttonCenterX = connectButtonRect.left + (connectButtonRect.width / 2);
+                    const buttonCenterY = connectButtonRect.top + (connectButtonRect.height / 2);
+                    const viewportCenterX = window.innerWidth / 2;
+                    const viewportCenterY = window.innerHeight / 2;
+                    
+                    // Calculate transform to animate from button position to center
+                    startX = buttonCenterX - viewportCenterX;
+                    startY = buttonCenterY - viewportCenterY;
+                }
                 
                 // Reset opacity, position, and ensure display is set
-                connectPage.style.opacity = '0';
-                connectPage.style.transform = `translate(${startX}px, ${startY}px) scale(0.3)`;
-                connectPage.style.display = 'flex';
+                
+                if (isMobile) {
+                    // On mobile, use fade-in only (no transform) to prevent background jump
+                    connectPage.style.opacity = '0';
+                    connectPage.style.transform = '';
+                    connectPage.style.display = 'flex';
+                    // Lock scroll position to prevent jump
+                    document.body.style.overflow = 'hidden';
+                    document.body.style.position = 'fixed';
+                    document.body.style.width = '100%';
+                    document.body.style.top = `-${currentScrollY}px`;
+                } else {
+                    // On desktop, use popup animation
+                    connectPage.style.opacity = '0';
+                    connectPage.style.transform = `translate(${startX}px, ${startY}px) scale(0.3)`;
+                    connectPage.style.display = 'flex';
+                }
                 
                 // Force reflow to ensure animation starts from beginning
                 connectPage.offsetHeight;
@@ -181,16 +222,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add show class to trigger animation
                 setTimeout(() => {
                     connectPage.classList.add('show');
-                    // Focus the name input field after animation starts (all devices)
-                    const nameInput = connectPage.querySelector('input[name="name"]');
-                    if (nameInput) {
-                        // Delay focus slightly to ensure form is visible
-                        setTimeout(() => {
-                            nameInput.focus();
-                        }, 100);
+                    // Only auto-focus on desktop to prevent mobile jump
+                    if (!isMobile) {
+                        const nameInput = connectPage.querySelector('input[name="name"]');
+                        if (nameInput) {
+                            setTimeout(() => {
+                                nameInput.focus();
+                            }, 100);
+                        }
                     }
                 }, 10);
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Don't scroll to prevent footer/background jump
             }
         });
     });

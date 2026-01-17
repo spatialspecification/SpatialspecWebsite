@@ -145,13 +145,6 @@ header .hero-brand {
     margin-bottom: 0;
 }
 
-.connect-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1.5rem;
-    width: 100%;
-}
 
 .hero-logo {
     width: 48px;
@@ -215,6 +208,11 @@ header .hero-brand {
 .service-item {
     display: flex;
     flex-direction: column;
+}
+
+.service-item-spacer {
+    height: 1.5rem;
+    pointer-events: none;
 }
 
 /* =============================================

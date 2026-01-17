@@ -501,6 +501,33 @@ header .hero-brand {
    Footer
    ============================================= */
 
+.footer-connect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.btn-connect-footer {
+    background: var(--accent);
+    color: var(--bg-primary);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: all 0.2s var(--transition);
+}
+
+.btn-connect-footer:hover {
+    background: var(--accent);
+    opacity: 0.9;
+    color: var(--bg-primary);
+}
+
 .footer-content {
     display: flex;
     justify-content: flex-start;

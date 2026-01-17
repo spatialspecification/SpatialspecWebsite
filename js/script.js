@@ -74,6 +74,33 @@ document.addEventListener('DOMContentLoaded', function() {
     setupDropdownToggle('.btn-footer-link');
 
     /**
+     * Legal page toggle for footer Legal button
+     */
+    document.querySelectorAll('.btn-footer-link[data-legal="legal"]').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const legalPage = document.getElementById('legal-page');
+            if (legalPage) {
+                // Close all dropdowns
+                closeAllDropdowns();
+                // Show legal page and scroll to top
+                legalPage.style.display = 'block';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+
+    /**
+     * Close legal page function (called from HTML)
+     */
+    window.closeLegalPage = function() {
+        const legalPage = document.getElementById('legal-page');
+        if (legalPage) {
+            legalPage.style.display = 'none';
+        }
+    };
+
+    /**
      * Contact form toggle
      */
     document.querySelectorAll('.btn-connect').forEach(button => {

@@ -566,6 +566,65 @@ header .hero-brand {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
+/* =============================================
+   Legal Page
+   ============================================= */
+
+.legal-page {
+    margin-top: 2rem;
+    padding: 2rem 0;
+    animation: fadeUp 0.5s var(--transition);
+}
+
+.legal-page-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+}
+
+.legal-section {
+    margin-bottom: 2rem;
+}
+
+.legal-section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.legal-content {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.legal-content p {
+    margin: 0 0 1rem 0;
+}
+
+.btn-close-legal {
+    background: transparent;
+    color: var(--text-primary);
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin-top: 1.5rem;
+    transition: all 0.2s var(--transition);
+}
+
+.btn-close-legal:hover {
+    background: transparent;
+    color: var(--accent);
+}
+
 .legal-buttons {
     display: flex;
     flex-direction: row;

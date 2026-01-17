@@ -546,7 +546,7 @@ header .hero-brand {
     cursor: pointer;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.025rem;
     transition: all 0.2s var(--transition);
 }
 

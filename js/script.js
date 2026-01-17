@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize dropdown toggles
     setupDropdownToggle('.btn-service');
     setupDropdownToggle('.btn-legal');
+    setupDropdownToggle('.btn-footer-link');
 
     /**
      * Contact form toggle

@@ -74,8 +74,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const connectButton = document.querySelector('.btn-connect-footer-link');
         if (connectPage && navButtons) {
             connectPage.classList.remove('show');
-            connectPage.style.display = 'none';
-            connectPage.style.opacity = '0';
+            // Reset transform for next open
+            setTimeout(() => {
+                connectPage.style.display = 'none';
+                connectPage.style.opacity = '0';
+                connectPage.style.transform = '';
+            }, 300);
             navButtons.style.display = 'flex';
             if (connectButton) {
                 connectButton.classList.remove('active');
@@ -152,11 +156,26 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.classList.add('active');
                 // Hide nav and show connect page
                 navButtons.style.display = 'none';
-                // Reset opacity and ensure display is set
+                
+                // Get Connect button position for popup animation
+                const connectButtonRect = this.getBoundingClientRect();
+                const buttonCenterX = connectButtonRect.left + (connectButtonRect.width / 2);
+                const buttonCenterY = connectButtonRect.top + (connectButtonRect.height / 2);
+                const viewportCenterX = window.innerWidth / 2;
+                const viewportCenterY = window.innerHeight / 2;
+                
+                // Calculate transform to animate from button position to center
+                const startX = buttonCenterX - viewportCenterX;
+                const startY = buttonCenterY - viewportCenterY;
+                
+                // Reset opacity, position, and ensure display is set
                 connectPage.style.opacity = '0';
+                connectPage.style.transform = `translate(${startX}px, ${startY}px) scale(0.3)`;
                 connectPage.style.display = 'flex';
+                
                 // Force reflow to ensure animation starts from beginning
                 connectPage.offsetHeight;
+                
                 // Remove show class if present
                 connectPage.classList.remove('show');
                 // Add show class to trigger animation
@@ -262,26 +281,57 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /**
-     * Show footer on scroll down
+     * Show footer on scroll down and sync Connect button position with footer transitions
      */
     const siteFooter = document.querySelector('.site-footer');
+    const connectButton = document.querySelector('.btn-connect-float');
     let lastScrollTop = 0;
+    
+    function updateConnectButtonPosition() {
+        if (connectButton && siteFooter) {
+            const footerRect = siteFooter.getBoundingClientRect();
+            // Position button so its bottom aligns with footer's top
+            const footerTop = window.innerHeight - footerRect.top;
+            connectButton.style.bottom = footerTop + 'px';
+        }
+    }
     
     window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         if (scrollTop > 100) {
             // Show footer when scrolled down
-            if (siteFooter) {
+            if (siteFooter && !siteFooter.classList.contains('visible')) {
                 siteFooter.classList.add('visible');
+                // Update button position after footer starts transitioning
+                setTimeout(updateConnectButtonPosition, 50);
             }
         } else {
             // Hide footer when at top
-            if (siteFooter) {
+            if (siteFooter && siteFooter.classList.contains('visible')) {
                 siteFooter.classList.remove('visible');
+                // Update button position after footer starts transitioning
+                setTimeout(updateConnectButtonPosition, 50);
             }
         }
         
         lastScrollTop = scrollTop;
+    });
+    
+    // Update button position when footer transition completes
+    if (siteFooter) {
+        siteFooter.addEventListener('transitionend', function() {
+            updateConnectButtonPosition();
+        });
+    }
+    
+    // Initial position update
+    setTimeout(updateConnectButtonPosition, 100);
+    
+    // Update on window resize (throttled)
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateConnectButtonPosition, 150);
     });
 });

@@ -162,6 +162,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Add show class to trigger animation
                 setTimeout(() => {
                     connectPage.classList.add('show');
+                    // On mobile, focus the name input field after animation starts
+                    const isMobile = window.innerWidth <= 600;
+                    if (isMobile) {
+                        const nameInput = connectPage.querySelector('input[name="name"]');
+                        if (nameInput) {
+                            // Delay focus slightly to ensure form is visible
+                            setTimeout(() => {
+                                nameInput.focus();
+                            }, 100);
+                        }
+                    }
                 }, 10);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }

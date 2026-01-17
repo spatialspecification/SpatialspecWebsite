@@ -533,7 +533,8 @@ header .hero-brand {
     transition: all 0.2s var(--transition);
 }
 
-.btn-connect-footer:hover {
+.btn-connect-footer:hover,
+.btn-connect-footer.active {
     background: var(--accent);
     opacity: 0.9;
     color: #ffffff;

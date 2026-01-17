@@ -93,6 +93,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /**
+     * Close connect page function
+     */
+    function closeConnectPage() {
+        const connectPage = document.getElementById('connect-page');
+        const navButtons = document.querySelector('.hero-buttons');
+        const connectButton = document.querySelector('.btn-connect-footer');
+        if (connectPage && navButtons) {
+            connectPage.classList.remove('show');
+            connectPage.style.display = 'none';
+            connectPage.style.opacity = '0';
+            navButtons.style.display = 'flex';
+            if (connectButton) {
+                connectButton.classList.remove('active');
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    /**
      * Legal page toggle for footer Legal button
      */
     document.querySelectorAll('.btn-footer-link[data-legal="legal"]').forEach(button => {
@@ -127,6 +146,57 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     legalPage.classList.add('show');
                 }, 10);
+                window.scrollTo({ top: 0, behavior: 'smooth'                 });
+            }
+        });
+    });
+
+    /**
+     * Connect page toggle for footer Connect button
+     */
+    document.querySelectorAll('.btn-connect-footer').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const connectPage = document.getElementById('connect-page');
+            const navButtons = document.querySelector('.hero-buttons');
+            if (connectPage && navButtons) {
+                // Check if connect page is already showing
+                const isConnectPageShowing = connectPage.classList.contains('show') && connectPage.style.display !== 'none';
+                
+                if (isConnectPageShowing) {
+                    // If already showing, toggle back to main body
+                    closeConnectPage();
+                    return;
+                }
+                
+                // Close legal page if open
+                closeLegalPage();
+                // Close all dropdowns
+                closeAllDropdowns();
+                // Add active class to Connect button
+                this.classList.add('active');
+                // Hide nav and show connect page
+                navButtons.style.display = 'none';
+                // Reset opacity and ensure display is set
+                connectPage.style.opacity = '0';
+                connectPage.style.display = 'flex';
+                // Force reflow to ensure animation starts from beginning
+                connectPage.offsetHeight;
+                // Remove show class if present
+                connectPage.classList.remove('show');
+                // Add show class to trigger animation
+                setTimeout(() => {
+                    connectPage.classList.add('show');
+                }, 10);
+                // Auto-expand the contact form dropdown
+                setTimeout(() => {
+                    const contactFormButton = connectPage.querySelector('.btn-service[data-service="contact-form"]');
+                    const contactFormDropdown = connectPage.querySelector('.service-dropdown');
+                    if (contactFormButton && contactFormDropdown) {
+                        contactFormDropdown.classList.add('active');
+                        contactFormButton.classList.add('active');
+                    }
+                }, 100);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });

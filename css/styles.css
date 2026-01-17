@@ -498,7 +498,7 @@ header .hero-brand {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: flex-start;
     margin-top: 1.5rem;
     flex-wrap: wrap;
@@ -523,7 +523,8 @@ header .hero-brand {
 }
 
 .footer-links .service-item:not(:first-child),
-.footer-links .footer-text {
+.footer-links .footer-text,
+.footer-links .footer-contact-info {
     align-self: flex-start;
 }
 
@@ -547,6 +548,7 @@ header .hero-brand {
     color: var(--text-primary);
     padding: 0.5rem 1.25rem;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
@@ -588,18 +590,10 @@ header .hero-brand {
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-.footer-contact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0.25rem;
-}
-
 .footer-contact-info {
     color: var(--text-secondary);
     font-size: 0.75rem;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    text-align: right;
 }
 
 /* =============================================

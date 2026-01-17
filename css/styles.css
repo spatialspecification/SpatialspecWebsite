@@ -32,9 +32,9 @@ body {
     background-color: var(--bg-primary);
     background-image: url('../assets/DesktopBackground.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
@@ -43,6 +43,8 @@ body {
     flex-direction: column;
     padding: 0;
     margin: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 main {
@@ -790,5 +792,11 @@ header .hero-brand {
 
     #connect-page .service-panel {
         width: 100%;
+    }
+
+    body {
+        background-attachment: scroll;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
     }
 }

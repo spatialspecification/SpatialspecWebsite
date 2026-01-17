@@ -74,14 +74,35 @@ document.addEventListener('DOMContentLoaded', function() {
     setupDropdownToggle('.btn-footer-link');
 
     /**
+     * Close legal page function
+     */
+    function closeLegalPage() {
+        const legalPage = document.getElementById('legal-page');
+        const navButtons = document.querySelector('.hero-buttons');
+        if (legalPage && navButtons) {
+            legalPage.classList.remove('show');
+            legalPage.style.display = 'none';
+            navButtons.style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    /**
      * Legal page toggle for footer Legal button
      */
+    let legalPageTimeout = null;
     document.querySelectorAll('.btn-footer-link[data-legal="legal"]').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
             const legalPage = document.getElementById('legal-page');
             const navButtons = document.querySelector('.hero-buttons');
             if (legalPage && navButtons) {
+                // Clear any existing timeout
+                if (legalPageTimeout) {
+                    clearTimeout(legalPageTimeout);
+                    legalPageTimeout = null;
+                }
+                
                 // Close all dropdowns
                 closeAllDropdowns();
                 // Hide nav and show legal page
@@ -96,23 +117,15 @@ document.addEventListener('DOMContentLoaded', function() {
                     }, 10);
                 }, 10);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+                
+                // Set timeout to return to main page after 10 seconds
+                legalPageTimeout = setTimeout(() => {
+                    closeLegalPage();
+                    legalPageTimeout = null;
+                }, 10000); // 10 seconds
             }
         });
     });
-
-    /**
-     * Close legal page function (called from HTML)
-     */
-    window.closeLegalPage = function() {
-        const legalPage = document.getElementById('legal-page');
-        const navButtons = document.querySelector('.hero-buttons');
-        if (legalPage && navButtons) {
-            legalPage.classList.remove('show');
-            legalPage.style.display = 'none';
-            navButtons.style.display = 'flex';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    };
 
     /**
      * Contact form toggle

@@ -51,6 +51,17 @@ main {
 
 .site-footer {
     margin-top: auto;
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: bottom 0.3s var(--transition);
+    z-index: 100;
+}
+
+.site-footer.visible {
+    bottom: 0;
 }
 
 .site-footer .hero-content {

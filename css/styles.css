@@ -475,6 +475,7 @@ header.hero {
     margin-top: 1.5rem;
     flex-wrap: wrap;
     gap: 1rem;
+    width: 100%;
 }
 
 .legal-buttons {
@@ -494,6 +495,8 @@ header.hero {
 
 .copyright {
     margin: 0;
+    margin-left: auto;
+    text-align: right;
 }
 
 .copyright p {

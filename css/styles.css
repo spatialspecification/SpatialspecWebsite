@@ -507,9 +507,6 @@ header.hero {
     margin: 0;
     margin-left: auto;
     text-align: right;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
 }
 
 .copyright p {

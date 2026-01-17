@@ -41,7 +41,8 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0 5%;
+    padding: 0;
+    margin: 0;
 }
 
 main {
@@ -54,6 +55,7 @@ main {
 
 .site-footer .hero-content {
     max-width: 100%;
+    width: 100%;
 }
 
 /* =============================================
@@ -65,19 +67,17 @@ main {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    padding: 1rem 5%;
+    padding: 1.5rem 5%;
     position: relative;
     overflow: hidden;
 }
 
 header.hero {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1.5rem 5%;
 }
 
 .site-footer.hero {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1.5rem 5%;
 }
 
 .hero::before {

@@ -331,7 +331,7 @@ header .hero-brand {
     padding: 0;
     margin-top: 0;
     background: transparent;
-    max-width: 500px;
+    width: 100%;
 }
 
 .service-form-container {

@@ -51,6 +51,10 @@ main {
     margin-top: auto;
 }
 
+.site-footer .hero-content {
+    max-width: 100%;
+}
+
 /* =============================================
    Layout Sections
    ============================================= */

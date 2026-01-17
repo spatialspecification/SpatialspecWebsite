@@ -259,8 +259,8 @@ header .hero-brand {
 }
 
 .btn-submit.sent {
-    background: var(--accent);
-    color: var(--bg-primary);
+    background: transparent;
+    color: var(--accent);
 }
 
 .btn-legal {
@@ -505,7 +505,7 @@ header .hero-brand {
 .footer-links {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.5rem;
 }
 

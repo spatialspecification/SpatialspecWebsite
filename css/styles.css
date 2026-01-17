@@ -472,7 +472,7 @@ header.hero {
     display: flex;
     flex-direction: column;
     margin-top: 1.5rem;
-    align-items: flex-start;
+    align-items: flex-end;
 }
 
 .legal-buttons .service-item {

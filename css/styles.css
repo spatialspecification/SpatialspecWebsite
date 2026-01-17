@@ -552,14 +552,14 @@ header .hero-brand {
 
 .btn-footer-link {
     background: transparent;
-    color: var(--text-secondary);
-    padding: 0;
+    color: var(--text-primary);
+    padding: 0.5rem 1.25rem;
     border: none;
     cursor: pointer;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 400;
-    font-size: 0.75rem;
-    transition: color 0.2s var(--transition);
+    font-size: 0.9rem;
+    transition: all 0.2s var(--transition);
 }
 
 .btn-footer-link:hover,

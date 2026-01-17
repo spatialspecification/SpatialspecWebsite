@@ -218,16 +218,11 @@ header.hero {
 }
 
 .btn-connect {
-    align-self: flex-end;
     font-size: 0.9rem;
     border: none;
     background: transparent;
     color: var(--accent);
     padding: calc(0.5rem - 5px) calc(1.25rem - 5px);
-}
-
-.hero-brand .btn-connect {
-    align-self: center;
 }
 
 .btn-submit {

@@ -381,6 +381,8 @@ header .hero-brand {
     font-size: 0.85rem;
     color: var(--text-primary);
     transition: border-color 0.2s var(--transition);
+    width: 100%;
+    max-width: 500px;
 }
 
 .contact-form select {

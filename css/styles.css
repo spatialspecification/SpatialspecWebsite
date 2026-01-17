@@ -505,12 +505,18 @@ header .hero-brand {
 .footer-links {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .footer-links .service-item {
     position: relative;
+}
+
+.footer-links .service-item:not(:first-child),
+.footer-links .footer-text {
+    align-self: flex-start;
 }
 
 .footer-links .service-dropdown {

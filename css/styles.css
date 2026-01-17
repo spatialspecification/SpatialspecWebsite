@@ -503,12 +503,68 @@ header .hero-brand {
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin-top: 1.5rem;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
     width: 100%;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-links .service-item {
+    position: relative;
+}
+
+.footer-links .service-dropdown {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding-bottom: 0.5rem;
+    padding-top: 1rem;
+    animation: slideUp 0.3s var(--transition);
+    width: 100%;
+    max-width: 500px;
+}
+
+.footer-links .service-description {
+    font-size: 0.75rem;
+}
+
+.btn-footer-link {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    transition: color 0.2s var(--transition);
+}
+
+.btn-footer-link:hover,
+.btn-footer-link.active {
+    color: var(--accent);
+}
+
+.footer-separator {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    margin: 0 0.25rem;
+}
+
+.footer-text {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .legal-buttons {

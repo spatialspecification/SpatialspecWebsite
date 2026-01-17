@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function closeLegalPage() {
         const legalPage = document.getElementById('legal-page');
         const navButtons = document.querySelector('.hero-buttons');
-        const legalButton = document.querySelector('.btn-footer-link[data-legal="legal"]');
+        const legalButton = document.querySelector('.btn-footer-text[data-legal="legal"]');
         if (legalPage && navButtons) {
             legalPage.classList.remove('show');
             legalPage.style.display = 'none';
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Legal page toggle for footer Legal button
      */
-    document.querySelectorAll('.btn-footer-link[data-legal="legal"]').forEach(button => {
+    document.querySelectorAll('.btn-footer-text[data-legal="legal"]').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
             const legalPage = document.getElementById('legal-page');

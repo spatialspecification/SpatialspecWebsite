@@ -567,6 +567,23 @@ header .hero-brand {
     color: var(--accent);
 }
 
+.btn-footer-text {
+    background: transparent;
+    color: var(--text-secondary);
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    transition: color 0.2s var(--transition);
+}
+
+.btn-footer-text:hover,
+.btn-footer-text.active {
+    color: var(--accent);
+}
+
 .footer-separator {
     color: var(--text-secondary);
     font-size: 0.75rem;

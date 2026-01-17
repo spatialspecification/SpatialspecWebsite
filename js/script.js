@@ -102,6 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     return;
                 }
                 
+                // Close connect page if open
+                closeConnectPage();
                 // Close all dropdowns
                 closeAllDropdowns();
                 // Add active class to Legal button

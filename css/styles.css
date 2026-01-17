@@ -221,8 +221,8 @@ header.hero {
     align-self: flex-end;
     font-size: 0.9rem;
     border: none;
-    background: var(--accent);
-    color: var(--text-primary);
+    background: transparent;
+    color: var(--accent);
     padding: calc(0.5rem - 5px) calc(1.25rem - 5px);
 }
 

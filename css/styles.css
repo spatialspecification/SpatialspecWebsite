@@ -353,7 +353,8 @@ header .hero-brand {
 .service-form-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
+    width: 100%;
 }
 
 .contact-form {

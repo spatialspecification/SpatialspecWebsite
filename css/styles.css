@@ -511,13 +511,13 @@ header .hero-brand {
 
 .btn-connect-footer {
     background: var(--accent);
-    color: var(--bg-primary);
+    color: #ffffff;
     padding: 0.5rem 1.25rem;
     border-radius: 6px;
     border: none;
     cursor: pointer;
     font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 0.9rem;
     transition: all 0.2s var(--transition);
 }
@@ -525,7 +525,7 @@ header .hero-brand {
 .btn-connect-footer:hover {
     background: var(--accent);
     opacity: 0.9;
-    color: var(--bg-primary);
+    color: #ffffff;
 }
 
 .footer-content {

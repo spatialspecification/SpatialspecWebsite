@@ -519,7 +519,7 @@ header .hero-brand {
 }
 
 .footer-links .service-item:first-child {
-    margin-top: -1.5rem;
+    margin-top: -3rem;
 }
 
 .footer-links .service-item:not(:first-child),

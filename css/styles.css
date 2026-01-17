@@ -365,7 +365,8 @@ header .hero-brand {
 }
 
 .contact-form.active,
-.service-dropdown.active .contact-form {
+.service-dropdown.active .contact-form,
+#connect-page .contact-form {
     display: flex;
 }
 

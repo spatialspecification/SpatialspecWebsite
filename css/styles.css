@@ -518,6 +518,10 @@ header .hero-brand {
     position: relative;
 }
 
+.footer-links .service-item:first-child {
+    margin-top: -1.5rem;
+}
+
 .footer-links .service-item:not(:first-child),
 .footer-links .footer-text {
     align-self: flex-start;

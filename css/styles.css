@@ -705,6 +705,18 @@ header .hero-brand {
         padding: 1.5rem 4%;
     }
 
+    .site-footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    .site-footer.hero {
+        padding: 1.5rem 4%;
+    }
+
     .hero-buttons {
         width: 100%;
     }

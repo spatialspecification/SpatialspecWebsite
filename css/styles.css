@@ -222,6 +222,10 @@ header.hero {
     font-size: 0.85rem;
 }
 
+.hero-brand .btn-connect {
+    align-self: center;
+}
+
 .btn-submit {
     margin-right: auto;
     font-size: 0.85rem;

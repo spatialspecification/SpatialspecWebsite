@@ -8,26 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Close all dropdowns and reset forms
      */
-    function closeAllDropdowns(keepServicesMenu = false) {
+    function closeAllDropdowns() {
         document.querySelectorAll('.service-dropdown').forEach(dropdown => {
-            // Keep services menu open if specified
-            if (keepServicesMenu && dropdown.classList.contains('services-menu')) {
-                return;
-            }
             dropdown.classList.remove('active');
         });
         document.querySelectorAll('.btn-service, .btn-legal').forEach(button => {
-            // Keep services menu button active if specified
-            if (keepServicesMenu && button.dataset.service === 'services-menu') {
-                return;
-            }
             button.classList.remove('active');
         });
         document.querySelectorAll('.contact-form').forEach(form => {
             form.classList.remove('active');
-        });
-        document.querySelectorAll('.btn-connect').forEach(button => {
-            button.textContent = 'Connect';
         });
     }
 
@@ -41,28 +30,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.stopPropagation();
                 const dropdown = this.nextElementSibling;
                 const isActive = dropdown.classList.contains('active');
-                const isInsideServicesMenu = this.closest('.services-menu');
                 
-                // If clicking inside services menu, keep it open
-                if (isInsideServicesMenu) {
-                    // Close other service dropdowns inside services menu, but keep services menu open
-                    document.querySelectorAll('.services-menu .service-dropdown').forEach(d => {
-                        if (d !== dropdown) d.classList.remove('active');
-                    });
-                    document.querySelectorAll('.services-menu .btn-service').forEach(b => {
-                        if (b !== this) b.classList.remove('active');
-                    });
-                    
-                    // Toggle the clicked dropdown
-                    dropdown.classList.toggle('active', !isActive);
-                    this.classList.toggle('active', !isActive);
-                } else {
-                    closeAllDropdowns();
-                    
-                    if (!isActive) {
-                        dropdown.classList.add('active');
-                        this.classList.add('active');
-                    }
+                closeAllDropdowns();
+                
+                if (!isActive) {
+                    dropdown.classList.add('active');
+                    this.classList.add('active');
                 }
             });
         });
@@ -194,30 +167,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /**
-     * Contact form toggle
-     */
-    document.querySelectorAll('.btn-connect').forEach(button => {
-        button.addEventListener('click', function(e) {
-            e.stopPropagation();
-            const dropdown = this.nextElementSibling;
-            const form = dropdown ? dropdown.querySelector('.contact-form') : null;
-            
-            if (dropdown) {
-                const isActive = dropdown.classList.contains('active');
-                dropdown.classList.toggle('active', !isActive);
-                this.classList.toggle('active', !isActive);
-                
-                // Toggle form visibility within dropdown
-                if (form) {
-                    form.classList.toggle('active', !isActive);
-                }
-                
-                this.textContent = isActive ? 'Connect' : 'Close';
-            }
-        });
-    });
-
-    /**
      * Service dropdown styling - add class when value selected
      */
     document.querySelectorAll('.contact-form select[name="service"]').forEach(select => {
@@ -276,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 2000);
             })
             .catch(error => {
-                console.error('Error:', error);
                 // Reset button even on error
                 submitBtn.textContent = originalText;
                 submitBtn.classList.remove('sent');

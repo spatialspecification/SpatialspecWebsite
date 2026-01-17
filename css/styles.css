@@ -60,9 +60,6 @@ main {
     z-index: 100;
 }
 
-.site-footer.visible {
-    bottom: 0;
-}
 
 .site-footer .hero-content {
     max-width: 100%;
@@ -226,10 +223,6 @@ header .hero-brand {
     flex-direction: column;
 }
 
-.service-item-spacer {
-    height: 1.5rem;
-    pointer-events: none;
-}
 
 /* =============================================
    Buttons
@@ -255,14 +248,9 @@ header .hero-brand {
 
 .btn-service:hover,
 .btn-service.active,
-.btn-connect:hover,
 .btn-submit:hover {
     background: transparent;
     color: var(--accent);
-}
-
-.btn-connect {
-    font-size: 0.9rem;
 }
 
 
@@ -312,18 +300,6 @@ header .hero-brand {
     display: block;
 }
 
-/* Nested services menu */
-.services-menu {
-    padding: 0.5rem 0;
-}
-
-.services-menu .service-item {
-    margin-left: 0;
-}
-
-.services-menu .service-dropdown {
-    padding-left: 1rem;
-}
 
 .service-description {
     color: var(--text-muted);
@@ -617,44 +593,6 @@ header .hero-brand {
     animation: fadeUp 1s var(--transition) 0.5s forwards;
 }
 
-.legal-buttons {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    align-items: center;
-}
-
-.legal-buttons .service-item {
-    align-items: flex-start;
-    position: relative;
-}
-
-.legal-buttons .service-dropdown {
-    position: absolute;
-    bottom: 100%;
-    left: 0;
-    padding-bottom: 0.5rem;
-    padding-top: 1rem;
-    animation: slideUp 0.3s var(--transition);
-    width: 100%;
-    max-width: 500px;
-}
-
-.legal-buttons .service-description {
-    font-size: 0.75rem;
-}
-
-.copyright {
-    margin: 0;
-    margin-left: auto;
-    text-align: right;
-}
-
-.copyright p {
-    color: var(--text-secondary);
-    font-size: 0.75rem;
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-}
 
 /* =============================================
    Mobile Responsive

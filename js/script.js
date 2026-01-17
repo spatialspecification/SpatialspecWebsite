@@ -95,26 +95,18 @@ document.addEventListener('DOMContentLoaded', function() {
     /**
      * Legal page toggle for footer Legal button
      */
-    let legalPageTimeout = null;
     document.querySelectorAll('.btn-footer-link[data-legal="legal"]').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
             const legalPage = document.getElementById('legal-page');
             const navButtons = document.querySelector('.hero-buttons');
             if (legalPage && navButtons) {
-                // Clear any existing timeout
-                if (legalPageTimeout) {
-                    clearTimeout(legalPageTimeout);
-                    legalPageTimeout = null;
-                }
+                // Check if legal page is already showing
+                const isLegalPageShowing = legalPage.classList.contains('show') && legalPage.style.display !== 'none';
                 
-                // If legal page is already showing, just reset the timeout
-                if (legalPage.classList.contains('show') && legalPage.style.display !== 'none') {
-                    // Set timeout to return to main page after 10 seconds
-                    legalPageTimeout = setTimeout(() => {
-                        closeLegalPage();
-                        legalPageTimeout = null;
-                    }, 10000);
+                if (isLegalPageShowing) {
+                    // If already showing, toggle back to main body
+                    closeLegalPage();
                     return;
                 }
                 
@@ -136,12 +128,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     legalPage.classList.add('show');
                 }, 10);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                
-                // Set timeout to return to main page after 10 seconds
-                legalPageTimeout = setTimeout(() => {
-                    closeLegalPage();
-                    legalPageTimeout = null;
-                }, 10000); // 10 seconds
             }
         });
     });

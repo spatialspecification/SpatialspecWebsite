@@ -188,15 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(() => {
                     connectPage.classList.add('show');
                 }, 10);
-                // Auto-expand the contact form dropdown
-                setTimeout(() => {
-                    const contactFormButton = connectPage.querySelector('.btn-service[data-service="contact-form"]');
-                    const contactFormDropdown = connectPage.querySelector('.service-dropdown');
-                    if (contactFormButton && contactFormDropdown) {
-                        contactFormDropdown.classList.add('active');
-                        contactFormButton.classList.add('active');
-                    }
-                }, 100);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });

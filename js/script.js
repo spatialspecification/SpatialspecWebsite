@@ -80,11 +80,14 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
             const legalPage = document.getElementById('legal-page');
-            if (legalPage) {
+            const navButtons = document.querySelector('.hero-buttons');
+            if (legalPage && navButtons) {
                 // Close all dropdowns
                 closeAllDropdowns();
-                // Show legal page and scroll to top
-                legalPage.style.display = 'block';
+                // Hide nav and show legal page
+                navButtons.style.display = 'none';
+                legalPage.style.display = 'flex';
+                legalPage.style.opacity = '1';
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
@@ -95,8 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
      */
     window.closeLegalPage = function() {
         const legalPage = document.getElementById('legal-page');
-        if (legalPage) {
+        const navButtons = document.querySelector('.hero-buttons');
+        if (legalPage && navButtons) {
             legalPage.style.display = 'none';
+            navButtons.style.display = 'flex';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     };
 

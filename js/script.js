@@ -252,4 +252,28 @@ document.addEventListener('DOMContentLoaded', function() {
             closeAllDropdowns();
         }
     });
+
+    /**
+     * Show footer on scroll down
+     */
+    const siteFooter = document.querySelector('.site-footer');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            // Show footer when scrolled down
+            if (siteFooter) {
+                siteFooter.classList.add('visible');
+            }
+        } else {
+            // Hide footer when at top
+            if (siteFooter) {
+                siteFooter.classList.remove('visible');
+            }
+        }
+        
+        lastScrollTop = scrollTop;
+    });
 });

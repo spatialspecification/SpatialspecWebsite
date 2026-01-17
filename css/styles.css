@@ -60,6 +60,10 @@ main {
     z-index: 100;
 }
 
+.site-footer.visible {
+    bottom: 0;
+}
+
 
 .site-footer .hero-content {
     max-width: 100%;

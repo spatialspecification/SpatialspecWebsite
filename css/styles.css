@@ -258,14 +258,8 @@ header .hero-brand {
 
 
 .btn-submit {
-    margin: 0;
+    margin-right: auto;
     font-size: 0.85rem;
-    align-self: center;
-}
-
-#connect-page .btn-submit {
-    align-self: center;
-    margin: 0;
 }
 
 .btn-submit.sent {
@@ -368,7 +362,6 @@ header .hero-brand {
     color: var(--text-primary);
     transition: border-color 0.2s var(--transition);
     width: 100%;
-    max-width: 500px;
 }
 
 .contact-form select {
@@ -704,7 +697,6 @@ header .hero-brand {
 
 #connect-page .service-form-container {
     align-items: flex-start;
-    max-width: 500px;
     width: 100%;
 }
 
@@ -776,5 +768,20 @@ header .hero-brand {
     .workflow-mini .workflow-arrow {
         width: 12px;
         height: 12px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+        max-width: 100%;
+    }
+
+    #connect-page .service-form-container {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #connect-page .service-panel {
+        width: 100%;
     }
 }

@@ -86,8 +86,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 closeAllDropdowns();
                 // Hide nav and show legal page
                 navButtons.style.display = 'none';
-                legalPage.style.display = 'flex';
-                legalPage.style.opacity = '1';
+                legalPage.style.opacity = '0';
+                legalPage.classList.add('show');
+                // Reset animation by removing and re-adding class
+                setTimeout(() => {
+                    legalPage.classList.remove('show');
+                    setTimeout(() => {
+                        legalPage.classList.add('show');
+                    }, 10);
+                }, 10);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
@@ -100,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const legalPage = document.getElementById('legal-page');
         const navButtons = document.querySelector('.hero-buttons');
         if (legalPage && navButtons) {
+            legalPage.classList.remove('show');
             legalPage.style.display = 'none';
             navButtons.style.display = 'flex';
             window.scrollTo({ top: 0, behavior: 'smooth' });

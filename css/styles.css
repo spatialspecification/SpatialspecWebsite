@@ -570,13 +570,17 @@ header .hero-brand {
    ============================================= */
 
 .legal-page {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 0.5rem;
     align-items: flex-start;
-    animation: fadeUp 1s var(--transition) 0.5s forwards;
-    opacity: 0;
     width: 100%;
+    opacity: 0;
+}
+
+.legal-page.show {
+    display: flex;
+    animation: fadeUp 1s var(--transition) 0.5s forwards;
 }
 
 .legal-buttons {

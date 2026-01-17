@@ -281,11 +281,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     /**
-     * Show footer on scroll down and sync Connect button position with footer transitions
+     * Sync Connect button position with footer
      */
     const siteFooter = document.querySelector('.site-footer');
     const connectButton = document.querySelector('.btn-connect-float');
-    let lastScrollTop = 0;
     
     function updateConnectButtonPosition() {
         if (connectButton && siteFooter) {
@@ -294,35 +293,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const footerTop = window.innerHeight - footerRect.top;
             connectButton.style.bottom = footerTop + 'px';
         }
-    }
-    
-    window.addEventListener('scroll', function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        if (scrollTop > 100) {
-            // Show footer when scrolled down
-            if (siteFooter && !siteFooter.classList.contains('visible')) {
-                siteFooter.classList.add('visible');
-                // Update button position after footer starts transitioning
-                setTimeout(updateConnectButtonPosition, 50);
-            }
-        } else {
-            // Hide footer when at top
-            if (siteFooter && siteFooter.classList.contains('visible')) {
-                siteFooter.classList.remove('visible');
-                // Update button position after footer starts transitioning
-                setTimeout(updateConnectButtonPosition, 50);
-            }
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-    
-    // Update button position when footer transition completes
-    if (siteFooter) {
-        siteFooter.addEventListener('transitionend', function() {
-            updateConnectButtonPosition();
-        });
     }
     
     // Initial position update

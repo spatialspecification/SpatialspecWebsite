@@ -468,11 +468,20 @@ header.hero {
    Footer
    ============================================= */
 
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
 .legal-buttons {
     display: flex;
-    flex-direction: column;
-    margin-top: 1.5rem;
-    align-items: flex-end;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
 }
 
 .legal-buttons .service-item {
@@ -484,7 +493,7 @@ header.hero {
 }
 
 .copyright {
-    margin-top: 1rem;
+    margin: 0;
 }
 
 .copyright p {

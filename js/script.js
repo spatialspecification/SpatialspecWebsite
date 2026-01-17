@@ -83,6 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (legalPage && navButtons) {
             legalPage.classList.remove('show');
             legalPage.style.display = 'none';
+            legalPage.style.opacity = '0';
             navButtons.style.display = 'flex';
             if (legalButton) {
                 legalButton.classList.remove('active');
@@ -107,20 +108,32 @@ document.addEventListener('DOMContentLoaded', function() {
                     legalPageTimeout = null;
                 }
                 
+                // If legal page is already showing, just reset the timeout
+                if (legalPage.classList.contains('show') && legalPage.style.display !== 'none') {
+                    // Set timeout to return to main page after 10 seconds
+                    legalPageTimeout = setTimeout(() => {
+                        closeLegalPage();
+                        legalPageTimeout = null;
+                    }, 10000);
+                    return;
+                }
+                
                 // Close all dropdowns
                 closeAllDropdowns();
                 // Add active class to Legal button
                 this.classList.add('active');
                 // Hide nav and show legal page
                 navButtons.style.display = 'none';
+                // Reset opacity and ensure display is set
                 legalPage.style.opacity = '0';
-                legalPage.classList.add('show');
-                // Reset animation by removing and re-adding class
+                legalPage.style.display = 'flex';
+                // Force reflow to ensure animation starts from beginning
+                legalPage.offsetHeight;
+                // Remove show class if present
+                legalPage.classList.remove('show');
+                // Add show class to trigger animation
                 setTimeout(() => {
-                    legalPage.classList.remove('show');
-                    setTimeout(() => {
-                        legalPage.classList.add('show');
-                    }, 10);
+                    legalPage.classList.add('show');
                 }, 10);
                 window.scrollTo({ top: 0, behavior: 'smooth' });
                 

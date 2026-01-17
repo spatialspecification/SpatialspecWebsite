@@ -246,7 +246,7 @@ header .hero-brand {
 .btn-service.active,
 .btn-connect:hover,
 .btn-submit:hover {
-    background: var(--bg-elevated);
+    background: transparent;
     color: var(--accent);
 }
 

@@ -325,7 +325,8 @@ header.hero {
     width: 100%;
 }
 
-.contact-form.active {
+.contact-form.active,
+.service-dropdown.active .contact-form {
     display: flex;
 }
 

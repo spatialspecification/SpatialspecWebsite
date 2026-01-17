@@ -78,11 +78,21 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.btn-connect').forEach(button => {
         button.addEventListener('click', function(e) {
             e.stopPropagation();
-            const form = this.nextElementSibling;
-            const isActive = form.classList.contains('active');
+            const dropdown = this.nextElementSibling;
+            const form = dropdown ? dropdown.querySelector('.contact-form') : null;
             
-            form.classList.toggle('active', !isActive);
-            this.textContent = isActive ? 'Connect' : 'Close';
+            if (dropdown) {
+                const isActive = dropdown.classList.contains('active');
+                dropdown.classList.toggle('active', !isActive);
+                this.classList.toggle('active', !isActive);
+                
+                // Toggle form visibility within dropdown
+                if (form) {
+                    form.classList.toggle('active', !isActive);
+                }
+                
+                this.textContent = isActive ? 'Connect' : 'Close';
+            }
         });
     });
 

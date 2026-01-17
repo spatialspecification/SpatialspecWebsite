@@ -247,10 +247,6 @@ header .hero-brand {
 
 .btn-connect {
     font-size: 0.9rem;
-    border: none;
-    background: transparent;
-    color: var(--accent);
-    padding: 0.5rem 1.25rem;
 }
 
 
@@ -547,7 +543,8 @@ header .hero-brand {
         width: 100%;
     }
 
-    .btn-service {
+    .btn-service,
+    .btn-connect {
         width: 100%;
         justify-content: center;
     }

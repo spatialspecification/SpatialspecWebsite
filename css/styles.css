@@ -225,6 +225,12 @@ header.hero {
     padding: 0.5rem 1.25rem;
 }
 
+.connect-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
 .btn-submit {
     margin-right: auto;
     font-size: 0.85rem;
